@@ -1,0 +1,70 @@
+{
+    "name": "terabytesoft/app-basic",
+    "type": "library",
+    "description": "Yii 3.0 Web Application Basic",
+    "keywords": [
+        "application",
+        "basic",
+        "web",
+        "yii"
+    ],
+    "homepage": "https://github.com/terabytesoft/app-basic",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/terabytesoft/app-basic/issues",
+        "source": "https://github.com/terabytesoft/app-basic",
+        "forum":  "https://discuss.cjtterabyte.com"
+    },
+    "authors": [
+        {
+            "name": "Wilmer Arambula",
+            "email": "terabytesoftw@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=7.1.0",
+        "yiisoft/yii-web": "^3.0@dev",
+        "yiisoft/di": "^3.0@dev",
+        "yiisoft/log": "^3.0@dev",
+        "yiisoft/cache": "^3.0@dev",
+        "yiisoft/active-record": "^3.0@dev",
+        "yiisoft/yii-swiftmailer": "dev-master",
+        "vlucas/phpdotenv": "^2.5",
+        "hiqdev/composer-config-plugin": "dev-master"
+    },
+    "require-dev": {
+        "yiisoft/yii-debug": "dev-master",
+        "yiisoft/yii-gii": "dev-master",
+        "phpunit/phpunit": "^7.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.0.1-dev"
+        },
+        "config-plugin": {
+            "params": "config/params.php",
+            "common": "config/common.php",
+            "web": "config/web.php"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"app\\basic\\": "src"}
+    },
+    "autoload-dev": {
+        "psr-4": {"app\\basic\\tests\\": "tests"}
+    },
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "enabled": false
+        }
+    }
+}

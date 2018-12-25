@@ -1,0 +1,24 @@
+build:
+    environment:
+        php:
+            version: 7.1
+    dependencies:
+        before:
+            - sudo composer self-update && composer --version
+imports:
+    - php
+checks:
+    php:
+        code_rating: true
+        duplication: true
+tools:
+    php_sim: false
+    php_cpd: false        
+filter:
+    excluded_paths:
+        - bin/*
+        - config/*
+        - docs/*
+        - runtime/*
+        - tests/*
+        - vendor/*
