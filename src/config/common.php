@@ -14,8 +14,8 @@
 
 return [
     'app' => [
-        'basePath' => dirname(__DIR__) . '/src',
-        'controllerNamespace' => \app\basic\commands::class,
+        'basePath' => dirname(__DIR__),
+        'controllerNamespace' => app\basic\commands::class,
         /*
         'controllerMap' => [
             'fixture' => [ // Fixture generation command line.
@@ -53,10 +53,10 @@ return [
     ]),
     'translator' => [
         'translations' => [
-            'yii-base-web' => [
+            'basic' => [
                 '__class' => yii\i18n\PhpMessageSource::class,
                 'sourceLanguage' => 'en-US',
-                'basePath' => '@yii/app/messages',
+                'basePath' => '@app/basic/messages',
             ],
         ],
     ],

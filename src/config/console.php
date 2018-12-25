@@ -14,6 +14,6 @@
 
 return [
     'app' => [
-        'controllerNamespace' => yii\app\commands::class,
+        'controllerNamespace' => app\basic\commands::class,
     ],
 ];

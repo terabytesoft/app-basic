@@ -14,10 +14,10 @@
 
 return [
     'app' => [
-        'controllerNamespace' => yii\app\controllers::class,
+        'controllerNamespace' => app\basic\controllers::class,
     ],
     'user' => [
-        'identityClass' => yii\app\models\User::class, // User must implement the IdentityInterface
+        'identityClass' => app\basic\forms\UserForm::class, // User must implement the IdentityInterface
     ],
     'request' => [
         'enableCookieValidation' => false,
