@@ -72,7 +72,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				'labelOptions' => ['id' => 'verifyCode'],
 			])->widget(Captcha::class, [
 				'template' => '{input}<div class="text-center">' . '<b>' .
-					$this->app->t('app', 'Captcha Code') . ':' . '</b>' . '{image}</div>',
+					$this->app->t('basic', 'Captcha Code') . ':' . '</b>' . '{image}</div>',
 				'options' => [
 					'class' => 'form-control',
 					'oninput' => 'this.setCustomValidity("")',
