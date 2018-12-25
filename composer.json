@@ -33,6 +33,7 @@
         "yiisoft/yii-bootstrap4": "dev-master",
         "yiisoft/yii-jquery": "dev-master",
         "yiisoft/yii-swiftmailer": "dev-master",
+        "yiisoft/rbac": "dev-master",
         "vlucas/phpdotenv": "^2.5",
         "hiqdev/composer-config-plugin": "dev-master"
     },
