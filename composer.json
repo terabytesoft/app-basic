@@ -25,17 +25,18 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.1.0",
-        "yiisoft/yii-web": "^3.0@dev",
+        "yiisoft/active-record": "^3.0@dev",
+        "yiisoft/cache": "^3.0@dev",
         "yiisoft/di": "^3.0@dev",
         "yiisoft/log": "^3.0@dev",
-        "yiisoft/cache": "^3.0@dev",
-        "yiisoft/active-record": "^3.0@dev",
+        "yiisoft/rbac": "dev-master",        
         "yiisoft/yii-bootstrap4": "dev-master",
+        "yiisoft/yii-captcha": "dev-master",
         "yiisoft/yii-jquery": "dev-master",
         "yiisoft/yii-swiftmailer": "dev-master",
-        "yiisoft/rbac": "dev-master",
-        "vlucas/phpdotenv": "^2.5",
-        "hiqdev/composer-config-plugin": "dev-master"
+        "yiisoft/yii-web": "^3.0@dev",
+        "hiqdev/composer-config-plugin": "dev-master",        
+        "vlucas/phpdotenv": "^2.5"
     },
     "require-dev": {
         "yiisoft/yii-debug": "dev-master",
