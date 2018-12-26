@@ -14,7 +14,7 @@
 
 namespace app\basic\forms;
 
-use app\basic\forms\UserForm;
+use app\basic\models\UserModels;
 use yii\base\Model;
 use yii\helpers\Yii;
 
@@ -23,8 +23,8 @@ class SignupForm extends Model
 	public $username;
 	public $email;
 	public $password;
-	public $verifyCode;
-
+    public $verifyCode;
+    
 	/**
 	 * {@inheritdoc}
 	 **/
@@ -33,13 +33,13 @@ class SignupForm extends Model
 		return [
 			['username', 'trim'],
 			['username', 'required'],
-			['username', 'unique', 'targetClass' => 'app\basic\forms\User', 'message' => 'This username has already been taken.'],
+			['username', 'unique', 'targetClass' => 'app\basic\models\UserModels', 'message' => 'This username has already been taken.'],
 			['username', 'string', 'min' => 2, 'max' => 255],
 			['email', 'trim'],
 			['email', 'required'],
 			['email', 'email'],
 			['email', 'string', 'max' => 255],
-			['email', 'unique', 'targetClass' => 'app\basic\forms\User', 'message' => 'This email address has already been taken.'],
+			['email', 'unique', 'targetClass' => 'app\basic\models\UserModels', 'message' => 'This email address has already been taken.'],
 			['password', 'required'],
 			['password', 'string', 'min' => 6],
 			// verifyCode needs to be entered correctly
@@ -73,7 +73,7 @@ class SignupForm extends Model
 			return null;
 		}
 
-		$user = new UserForm();
+		$user = new UserModels();
 
 		$user->username = $this->username;
 		$user->email = $this->email;

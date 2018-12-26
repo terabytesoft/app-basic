@@ -14,7 +14,7 @@
 
 namespace app\basic\forms;
 
-use app\basic\forms\User;
+use app\basic\models\UserModels;
 use yii\base\Model;
 use yii\helpers\Yii;
 
@@ -23,9 +23,9 @@ class ResetPasswordForm extends Model
 	public $password;
 
 	/**
-	 * @var app\basic\forms\User
+	 * @var app\basic\models\UserModels
 	 **/
-	private $_user;
+    private $_user;
 
 	/**
 	 * Creates a form model given a token.
@@ -34,11 +34,11 @@ class ResetPasswordForm extends Model
 	 * @param array $config name-value pairs that will be used to initialize the object properties
 	 * @throws \yii\base\InvalidValueException if token is empty or not valid
 	 **/
-	public function __construct($token, $config = [])
+    public function __construct($token, $config = [])
 	{
-		$user = new User();
+		$user = new UserModels();
 		
-		$this->_user = $user->findByPasswordResetToken($token);
+		$user = $user->findByPasswordResetToken($token);
 
 		parent::__construct($config);
 	}

@@ -14,15 +14,15 @@
 
 namespace app\basic\forms;
 
-use app\basic\forms\User;
+use app\basic\models\UserModels;
 use yii\base\Model;
 use yii\helpers\Yii;
 use yii\mail\MailerInterface;
 
 class PasswordResetRequestForm extends Model
 {
-	public $email;
-
+    public $email;
+    
 	/**
 	 * {@inheritdoc}
 	 **/
@@ -33,8 +33,8 @@ class PasswordResetRequestForm extends Model
 			['email', 'required'],
 			['email', 'email'],
 			['email', 'exist',
-				'targetClass' => User::class,
-				'filter' => ['status' => User::STATUS_ACTIVE],
+				'targetClass' => UserModels::class,
+				'filter' => ['status' => UserModels::STATUS_ACTIVE],
 				'message' => Yii::getApp()->t('basic', 'There is no user with this email address.'),
 			],
 		];
@@ -59,14 +59,14 @@ class PasswordResetRequestForm extends Model
 	 **/
 	public function sendEmail(MailerInterface $mailer)
 	{
-		$user = new User();
+		$user = new UserModels();
 
 		$user = $user->findOne([
-			'status' => User::STATUS_ACTIVE,
+			'status' => UserModels::STATUS_ACTIVE,
 			'email' => $this->email,
 		]);
 
-		if (!$user) {
+		if ($user) {
 			return false;
 		}
 

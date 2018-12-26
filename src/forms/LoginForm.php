@@ -14,7 +14,7 @@
 
 namespace app\basic\forms;
 
-use app\basic\forms\UserForm;
+use app\basic\models\UserModels;
 use yii\base\Model;
 use yii\helpers\Yii;
 
@@ -26,8 +26,9 @@ class LoginForm extends Model
 	public $username;
 	public $password;
 	public $rememberMe = false;
-	private $_user = false;
 	public $verifyCode;
+
+    private $_user = false;
 
 	/**
 	 * @return array the validation rules.
@@ -98,7 +99,7 @@ class LoginForm extends Model
 	 **/
 	public function getUser()
 	{
-		$user = new UserForm();
+		$user = new UserModels();
 
 		if ($this->_user === false) {
 			$this->_user = $user->findByUsername($this->username);

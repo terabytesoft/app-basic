@@ -12,7 +12,7 @@
  *         @yii: 3.0
  **/
 
-namespace app\basic\forms;
+namespace app\basic\models;
 
 use yii\activerecord\ActiveRecord;
 use yii\behaviors\TimestampBehavior;
@@ -34,7 +34,7 @@ use yii\web\IdentityInterface;
  * @property int $updated_at
  * @property string $password write-only password
  **/
-class UserForm extends ActiveRecord implements IdentityInterface
+class UserModels extends ActiveRecord implements IdentityInterface
 {
 	const STATUS_DELETED = 0;
 	const STATUS_ACTIVE = 10;
