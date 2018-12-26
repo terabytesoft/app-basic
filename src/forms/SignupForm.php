@@ -14,7 +14,7 @@
 
 namespace app\basic\forms;
 
-use app\basic\forms\User;
+use app\basic\forms\UserForm;
 use yii\base\Model;
 use yii\helpers\Yii;
 
@@ -43,7 +43,7 @@ class SignupForm extends Model
 			['password', 'required'],
 			['password', 'string', 'min' => 6],
 			// verifyCode needs to be entered correctly
-			['verifyCode', \yii\captcha\CaptchaValidator::class],
+			//['verifyCode', \yii\captcha\CaptchaValidator::class],
 		];
 	}
 
@@ -73,7 +73,7 @@ class SignupForm extends Model
 			return null;
 		}
 
-		$user = new User();
+		$user = new UserForm();
 
 		$user->username = $this->username;
 		$user->email = $this->email;
