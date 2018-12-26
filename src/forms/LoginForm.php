@@ -14,7 +14,7 @@
 
 namespace app\basic\forms;
 
-use app\basic\forms\User;
+use app\basic\forms\UserForm;
 use yii\base\Model;
 use yii\helpers\Yii;
 
@@ -42,7 +42,7 @@ class LoginForm extends Model
 			// password is validated by validatePassword()
 			['password', 'validatePassword'],
 			// verifyCode needs to be entered correctly
-			['verifyCode', \yii\captcha\CaptchaValidator::class],
+			//['verifyCode', \yii\captcha\CaptchaValidator::class],
 		];
 	}
 
@@ -98,7 +98,7 @@ class LoginForm extends Model
 	 **/
 	public function getUser()
 	{
-		$user = new User();
+		$user = new UserForm();
 
 		if ($this->_user === false) {
 			$this->_user = $user->findByUsername($this->username);
