@@ -18,17 +18,18 @@ App Web Application Basic of Yii Version 3.0 [Yii Framework](http://www.yiiframe
 
 The template contains the basic features including:
 
+- [x] Pages - [Screenshots]:
+    - [index](docs/images/home.jpg)
+    - [about](docs/images/about.jpg)
+    - [contact](docs/images/contact.jpg)
+
+
 - [x] User Functions - [Screenshots]:
     - [signup](docs/images/signup.png)
-    - [login](docs/images/login.png)
-    - [logout](docs/images/logout.png)
-    - [request password reset](docs/images/request-paswword-reset.png)
-    - [reset password](docs/images/reset-password.png)
-
-- [x] Pages - [Screenshots]:
-    - [index](docs/images/index.png)
-    - [about](docs/images/about.png)
-    - [contact](docs/images/contact.png)
+    - [login](docs/images/login.jpg)
+    - [request password reset](docs/images/request-paswword-reset.jpg)
+    - [reset password](docs/images/reset-password.jpg)
+    - [logout](docs/images/logout.jpg)
 
 It includes all commonly used configurations that would allow you to focus on adding new
 features to your application.
