@@ -14,7 +14,7 @@
 [![Total Downloads](https://poser.pugx.org/terabytesoft/app-basic/downloads)](https://packagist.org/packages/cjtterabytesoft/app)
 
 
-App Web Application Template is a skeleton of Yii Version 3.0 [Yii Framework](http://www.yiiframework.com/) application best for rapidly creating projects.
+App Web Application Basic of Yii Version 3.0 [Yii Framework](http://www.yiiframework.com/) application best for rapidly creating projects with Bootstrap 4.
 
 The template contains the basic features including:
 
@@ -38,6 +38,7 @@ DIRECTORY STRUCTURE
 
 ```
 config/             contains application configurations
+docs/               contains documentation app-basic
 src/
   assets/           contains assets definition
   commands/         contains console commands (controllers)
@@ -65,11 +66,13 @@ at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 You can then install this project template using the following command:
 
 ~~~
-composer create-project --prefer-dist --stability=dev cjtterabytesoft/app myapp
+composer create-project --prefer-dist --stability=dev terabytesoft/app-template-basic myapp
 ~~~
 
 Now you should be able to access the application through the following URL, assuming `public` is the directory
 directly under the Web root.
+
+**App Web Application Basic (terabytesoft/app-basic) is installed automatically together with the Web Project Skeleton Application Basic (terabytesoft/app-template-basic), both try the necessary packages to start your Web Application Basic in Yii3.** 
 
 ~~~
 http://localhost/
