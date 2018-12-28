@@ -7,7 +7,7 @@
  *        @link: https://github.com/terabytesoft/app-basic
  *      @author: Wilmer Arámbula <terabytesoftw@gmail.com>
  *   @copyright: (c) TERABYTE SOFTWARE SA
- *      @models: [UserForm]
+ *      @models: [UserModels]
  *       @since: 0.0.1
  *         @yii: 3.0
  **/

@@ -6,6 +6,7 @@
     <br>
 </p>
 
+
 [![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](https://www.yiiframework.com/)
 [![Build Status](https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/build.png?b=master)](https://scrutinizer-ci.com/g/terabytesoft/app-basic/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/terabytesoft/app-basic/?branch=master)
@@ -14,11 +15,10 @@
 [![Total Downloads](https://poser.pugx.org/terabytesoft/app-basic/downloads)](https://packagist.org/packages/cjtterabytesoft/app)
 
 
-App Web Application Basic of Yii Version 3.0 [Yii Framework](http://www.yiiframework.com/) application best for rapidly creating projects with Bootstrap 4.
-
-
 ![app-basic](docs/images/home.jpg)
 
+
+App Web Application Basic of Yii Version 3.0 [Yii Framework](http://www.yiiframework.com/) application best for rapidly creating projects with Bootstrap 4.
 
 The template contains the basic features including:
 
