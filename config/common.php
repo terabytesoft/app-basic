@@ -14,7 +14,7 @@
 
 return [
     'app' => [
-        'basePath' => dirname(__DIR__),
+        'basePath' => dirname(__DIR__) . '/src',
         'controllerNamespace' => app\basic\commands::class,
         /*
         'controllerMap' => [

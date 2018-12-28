@@ -12,7 +12,7 @@
  *         @yii: 3.0
  **/
 
-namespace app\basic\forms\migrations;
+namespace app\basic\commands\migrations;
 
 use yii\db\Migration;
 
