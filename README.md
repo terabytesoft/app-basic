@@ -111,7 +111,3 @@ CONFIGURATION
 
 [![License](https://poser.pugx.org/terabytesoft/app-basic/license)](https://packagist.org/packages/cjtterabytesoft/app)
 
-
-**NOTES:**
-
-- Check and edit the other files in the `config/` directory to customize your application as required.
