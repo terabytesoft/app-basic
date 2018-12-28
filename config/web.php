@@ -17,7 +17,7 @@ return [
         'controllerNamespace' => app\basic\controllers::class,
     ],
     'user' => [
-        'identityClass' => app\basic\forms\UserModels::class, // User must implement the IdentityInterface
+        'identityClass' => app\basic\models\UserModels::class, // User must implement the IdentityInterface
     ],
     'request' => [
         'enableCookieValidation' => false,
