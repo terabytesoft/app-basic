@@ -37,7 +37,8 @@
         "yiisoft/yii-swiftmailer": "dev-master",
         "yiisoft/yii-web": "^3.0@dev",
         "hiqdev/composer-config-plugin": "dev-master",        
-        "vlucas/phpdotenv": "^2.5"
+        "vlucas/phpdotenv": "^2.5",
+        "terabytesoft/alert": "@dev"
     },
     "require-dev": {
         "yiisoft/yii-debug": "dev-master",
