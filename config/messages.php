@@ -1,18 +1,6 @@
 <?php
 
 /**
- * For the full copyright and license information, please view the LICENSE.md
- * file that was distributed with this source code.
- *
- *        @link: https://github.com/terabytesoft/app-basic
- *      @author: Wilmer Arámbula <terabytesoftw@gmail.com>
- *   @copyright: (c) TERABYTE SOFTWARE SA
- *       @views: config[messages]
- *       @since: 0.0.1
- *         @yii: 3.0
- **/
-
-/**
  * This is a configuration file for the [[\yii\console\controllers\MessageController]] console command.
  *
  * In order to update translations, run the following console command:
