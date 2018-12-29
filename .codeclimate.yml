@@ -22,12 +22,7 @@ plugins:
         enabled: true
     phpmd:
         enabled: true
-    paths:
-        - "**.less"
-        - "**.css"
-        - "**.js"
-        - "**.php"
 exclude_patterns:
-    - "config/"
-    - "docs/"
-    - "tests/"
+- "config/"
+- "docs/"
+- "tests/"
