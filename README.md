@@ -23,7 +23,7 @@
     <a href="https://codeclimate.com/github/terabytesoft/app-basic/maintainability" target="_blank">
         <img src="https://api.codeclimate.com/v1/badges/fe720f0219c23dc3e237/maintainability" alt="Maintainability">
     </a>
-    <a href="https://packagist.org/packages/cjtterabytesoft/app" target="_blank">
+    <a href="https://packagist.org/packages/terabytesoft/app-basic" target="_blank">
         <img src="https://poser.pugx.org/terabytesoft/app-basic/downloads" alt="Total Downloads">
     </a>
 </p>
