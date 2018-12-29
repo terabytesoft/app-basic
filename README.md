@@ -102,7 +102,9 @@ composer create-project --prefer-dist --stability=dev terabytesoft/app-template-
 <p align="justify">
 Now you should be able to access the application through the following URL, assuming `public` is the directory
 directly under the Web root.
+</p>
 
+<p align="justify">
 **App Web Application Basic (terabytesoft/app-basic) is installed automatically together with the Web Project Skeleton Application Basic (terabytesoft/app-template-basic), both try the necessary packages to start your Web Application Basic in Yii3.** 
 </p>
 
