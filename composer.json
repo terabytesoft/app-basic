@@ -27,6 +27,7 @@
         "php": ">=7.1.0",
         "yiisoft/active-record": "^3.0@dev",
         "yiisoft/db-mysql": "^3.0@dev",
+        "yiisoft/log": "^3.0@dev",
         "yiisoft/rbac": "^3.0@dev",        
         "yiisoft/yii-bootstrap4": "^3.0@dev",
         "yiisoft/yii-captcha": "^3.0@dev",
