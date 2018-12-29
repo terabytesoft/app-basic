@@ -135,7 +135,7 @@ CONFIGURATION:
 
 ### DOCUMENTATION STYLE GUIDE:
 
-- [Style Guide](docs/DOCUMENTATION.md)
+- [Style Guide](docs/DOCUMENTATION.md).
 
 LICENSE:
 --------
