@@ -27,7 +27,7 @@ plugins:
         - "**.css"
         - "**.js"
         - "**.php"
-exclude_paths:
-    - config/
-    - docs/
-    - tests/
+exclude_patterns:
+    - "config/"
+    - "docs/"
+    - "tests/"
