@@ -66,7 +66,7 @@ class UserModels extends ActiveRecord implements IdentityInterface
      * findIdentity
      * Search user for id.
      *
-	 * @return array user data.
+	 * @return \yii\activerecord\ActiveRecord user data.
 	 **/
 	public static function findIdentity($id)
 	{

@@ -24,6 +24,7 @@ class ResetPasswordForm extends Model
      **/
     public function __construct(Application $app, string $token)
     {
+        $this->app = $app;
         $this->_user = UserModels::findByPasswordResetToken($token);
     }
 
