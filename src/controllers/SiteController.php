@@ -7,7 +7,7 @@ use app\basic\forms\LoginForm;
 use app\basic\forms\PasswordResetRequestForm;
 use app\basic\forms\ResetPasswordForm;
 use app\basic\forms\SignupForm;
-use app\basic\forms\User;
+use app\basic\models\UserModels;
 use yii\captcha\CaptchaAction;
 use yii\exceptions\InvalidArgumentException;
 use yii\web\BadRequestHttpException;
@@ -190,19 +190,19 @@ class SiteController extends Controller
 	 **/
 	public function actionResetPassword($token)
 	{
-		try {
-			$model = new ResetPasswordForm($token);
+        try {
+			$model = new ResetPasswordForm();
 		} catch (InvalidArgumentException $e) {
 			throw new BadRequestHttpException($e->getMessage());
 		}
 
+    	$user = new UserModels();
+    
 		if (empty($token) || !is_string($token)) {
 			$this->app->session->setFlash('danger', $this->app->t('basic', 'Password reset token cannot be blank.'));
 			return $this->goHome();
 		}
-
-		$user = new User();
-
+   
 		if (!$user->findByPasswordResetToken($token)) {
 			$this->app->session->setFlash('danger', $this->app->t('basic', 'Wrong password reset token.'));
 			return $this->goHome();
