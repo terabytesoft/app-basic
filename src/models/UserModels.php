@@ -9,7 +9,7 @@ use yii\exceptions\NotSupportedException;
 use yii\web\IdentityInterface;
 
 /**
- * User model.
+ * User is the model Web Application Basic.
  *
  * @property int $id
  * @property string $username
@@ -27,8 +27,10 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	const STATUS_DELETED = 0;
 	const STATUS_ACTIVE = 10;
 
-	/**
-	 * {@inheritdoc}
+    /**
+     * tableName
+     *
+	 * @return string table name.
 	 **/
 	public static function tableName()
 	{
@@ -36,7 +38,9 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	}
 
 	/**
-	 * {@inheritdoc}
+     * behaviors
+     *
+	 * @return array behaviors config.
 	 **/
 	public function behaviors()
 	{
@@ -46,7 +50,9 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	}
 
 	/**
-	 * {@inheritdoc}
+     * rules
+     *
+	 * @return array the validation rules.
 	 **/
 	public function rules()
 	{
@@ -57,7 +63,10 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	}
 
 	/**
-	 * {@inheritdoc}
+     * findIdentity
+     * Search user for id.
+     *
+	 * @return array user data.
 	 **/
 	public static function findIdentity($id)
 	{
@@ -65,6 +74,8 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	}
 
 	/**
+     * findIdentityByAccessToken
+     *
 	 * {@inheritdoc}
 	 **/
 	public static function findIdentityByAccessToken($token, $type = null)
@@ -73,6 +84,7 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	}
 
 	/**
+     * findByUsername
 	 * Finds user by username.
 	 *
 	 * @param string $username
@@ -84,9 +96,10 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	}
 
 	/**
+     * findByPasswordResetToken
 	 * Finds user by password reset token.
 	 *
-	 * @param string $token password reset token
+	 * @param string $token password reset token.
 	 * @return static|null
 	 **/
 	public static function findByPasswordResetToken($token)
@@ -104,7 +117,7 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	/**
 	 * Finds out if password reset token is valid.
 	 *
-	 * @param string $token password reset token
+	 * @param string $token password reset token.
 	 * @return bool
 	 **/
 	public static function isPasswordResetTokenValid($token)
@@ -120,7 +133,9 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * getId
+     *
+     * @return int id.
 	 **/
 	public function getId()
 	{
@@ -128,7 +143,9 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	}
 
 	/**
-	 * {@inheritdoc}
+	 * getAuthKey
+     *
+     * @return string authentication key.
 	 **/
 	public function getAuthKey()
 	{
@@ -136,7 +153,9 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	}
 
 	/**
-	 * {@inheritdoc}
+     * validateAuthKey
+     *
+	 * @return bool validate authentication key.
 	 **/
 	public function validateAuthKey($authKey)
 	{
@@ -144,6 +163,7 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	}
 
 	/**
+     * validatePassword
 	 * Validates password.
 	 *
 	 * @param string $password password to validate
@@ -155,6 +175,7 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	}
 
 	/**
+     * setPassword
 	 * Generates password hash from password and sets it to the model.
 	 *
 	 * @param string $password
@@ -165,7 +186,10 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	}
 
 	/**
+     * generateAuthKey
 	 * Generates "remember me" authentication key.
+     *
+     * @return string authentication key.
 	 **/
 	public function generateAuthKey()
 	{
@@ -173,7 +197,10 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	}
 
 	/**
+     * generatePasswordResetToken()
 	 * Generates new password reset token.
+     *
+     * @return string new token.
 	 **/
 	public function generatePasswordResetToken()
 	{
@@ -181,7 +208,10 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	}
 
 	/**
+     * removePasswordResetToken
 	 * Removes password reset token.
+     *
+     * @return null
 	 **/
 	public function removePasswordResetToken()
 	{

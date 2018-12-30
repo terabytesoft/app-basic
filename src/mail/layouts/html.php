@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Layout html mail Web Application Basic.
+ **/
+
 use yii\helpers\Html;
 
 /* @var $this \yii\web\View view component instance */

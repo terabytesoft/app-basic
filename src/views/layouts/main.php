@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * main is the layout Web Application Basic.
+ **/
+
 use app\basic\assets\AppAsset;
 use app\widgets\Alert;
 use yii\bootstrap4\Nav;

@@ -3,9 +3,12 @@
 namespace app\basic\forms;
 
 use app\basic\models\UserModels;
+use yii\base\Application;
 use yii\base\Model;
-use yii\helpers\Yii;
 
+/**
+ * SignupForm is the model behind the signup form Web Application Basic.
+ **/
 class SignupForm extends Model
 {
 	public $username;
@@ -13,8 +16,22 @@ class SignupForm extends Model
 	public $password;
     public $verifyCode;
     
-	/**
-	 * {@inheritdoc}
+    protected $app;
+
+    /**
+     * __construct
+     *
+     * @param Application $app
+     **/
+    public function __construct(Application $app)
+    {
+        $this->app = $app;
+    }
+
+    /**
+     * rules
+     *
+	 * @return array the validation rules.
 	 **/
 	public function rules()
 	{
@@ -36,24 +53,26 @@ class SignupForm extends Model
 	}
 
 	/**
-	 * atributeLabels.
-	 *
+	 * atributeLabels
 	 * Translate Atribute Labels.
+     *
+	 * @return array customized attribute labels.
 	 **/
 	public function attributeLabels()
 	{
 		return [
-			'email' => Yii::getApp()->t('basic', 'Email'),
-			'username' => Yii::getApp()->t('basic', 'Username'),
-			'password' => Yii::getApp()->t('basic', 'Password'),
-			'verifyCode' => Yii::getApp()->t('basic', 'VerifyCode'),
+			'email' => $this->app->t('basic', 'Email'),
+			'username' => $this->app->t('basic', 'Username'),
+			'password' => $this->app->t('basic', 'Password'),
+			'verifyCode' => $this->app->t('basic', 'VerifyCode'),
 		];
 	}
 
 	/**
+     * signup
 	 * Signs user up.
 	 *
-	 * @return User|null the saved model or null if saving fails
+	 * @return User|null the saved model or null if saving fails.
 	 **/
 	public function signup()
 	{

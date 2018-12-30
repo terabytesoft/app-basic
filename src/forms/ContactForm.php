@@ -2,12 +2,12 @@
 
 namespace app\basic\forms;
 
+use yii\base\Application;
 use yii\base\Model;
-use yii\helpers\Yii;
 use yii\mail\MailerInterface;
 
 /**
- * ContactForm is the model behind the contact form.
+ * ContactForm is the model behind the contact form Web Application Basic.
  **/
 class ContactForm extends Model
 {
@@ -17,7 +17,21 @@ class ContactForm extends Model
 	public $body;
 	public $verifyCode;
 
+	protected $app;
+
+    /**
+     * __construct
+     *
+     * @param Application $app
+     **/
+    public function __construct(Application $app)
+    {
+        $this->app = $app;
+    }
+
 	/**
+     * rules
+     *
 	 * @return array the validation rules.
 	 **/
 	public function rules()
@@ -33,24 +47,29 @@ class ContactForm extends Model
 	}
 
 	/**
-	 * @return array customized attribute labels
+     * attributeLabels
+	 * Translate Atribute Labels.
+     *
+	 * @return array customized attribute labels.
 	 **/
 	public function attributeLabels()
 	{
 		return [
-			'body' => Yii::getApp()->t('basic', 'Body'),
-			'email' => Yii::getApp()->t('basic', 'Email'),
-			'name' => Yii::getApp()->t('basic', 'Name'),
-			'password' => Yii::getApp()->t('basic', 'Password'),
-			'subject' => Yii::getApp()->t('basic', 'Subject'),
-			'verifyCode' => Yii::getApp()->t('basic', 'VerifyCode'),
+			'body' => $this->app->t('basic', 'Body'),
+			'email' => $this->app->t('basic', 'Email'),
+			'name' => $this->app->t('basic', 'Name'),
+			'password' => $this->app->t('basic', 'Password'),
+			'subject' => $this->app->t('basic', 'Subject'),
+			'verifyCode' => $this->app->t('basic', 'VerifyCode'),
 		];
 	}
 
 	/**
+     * contact
 	 * Sends an email to the specified email address using the information collected by this model.
-	 * @param string $email the target email address
-	 * @return bool whether the model passes validation
+     *
+	 * @param string $email the target email address.
+	 * @return bool whether the model passes validation.
 	 **/
 	public function contact(string $email, MailerInterface $mailer)
 	{

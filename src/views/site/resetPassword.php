@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * resetpassword is the view Web Application Basic.
+ **/
+
 use yii\bootstrap4\ActiveForm;
 use yii\helpers\Html;
 

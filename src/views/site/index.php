@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * index is the view Web Application Basic.
+ **/
+
 use yii\helpers\Html;
 
 $this->title = $this->app->t('basic', 'Index');

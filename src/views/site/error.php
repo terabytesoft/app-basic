@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * error is the view Web Application Basic.
+ **/
+
 use yii\helpers\Html;
 
 $this->title = $name;

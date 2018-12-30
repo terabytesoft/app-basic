@@ -3,10 +3,12 @@
 namespace app\basic\forms;
 
 use app\basic\models\UserModels;
+use yii\base\Application;
 use yii\base\Model;
-use yii\helpers\Yii;
 
 /**
+ * LoginForm is the model behind the login form Web Application Basic.
+ *
  * @property User|null $user This property is read-only.
  **/
 class LoginForm extends Model
@@ -16,9 +18,23 @@ class LoginForm extends Model
 	public $rememberMe = false;
 	public $verifyCode;
 
-    private $_user = false;
+    private $_user;
+
+    protected $app;
+
+    /**
+     * __construct
+     *
+     * @param Application $app
+     **/
+    public function __construct(Application $app)
+    {
+        $this->app = $app;
+    }
 
 	/**
+     * rules
+     *
 	 * @return array the validation rules.
 	 **/
 	public function rules()
@@ -36,61 +52,63 @@ class LoginForm extends Model
 	}
 
 	/**
-	 * atributeLabels.
-	 *
+	 * atributeLabels
 	 * Translate Atribute Labels.
+     *
+	 * @return array customized attribute labels.
 	 **/
 	public function attributeLabels()
 	{
 		return [
-			'username' => Yii::getApp()->t('basic', 'Username'),
-			'password' => Yii::getApp()->t('basic', 'Password'),
-			'rememberMe' => Yii::getApp()->t('basic', 'RememberMe'),
-			'verifyCode' => Yii::getApp()->t('basic', 'VerifyCode'),
+			'username' => $this->app->t('basic', 'Username'),
+			'password' => $this->app->t('basic', 'Password'),
+			'rememberMe' => $this->app->t('basic', 'RememberMe'),
+			'verifyCode' => $this->app->t('basic', 'VerifyCode'),
 		];
 	}
 
 	/**
-	 * Validates the password.
+	 * validatePassword
 	 * This method serves as the inline validation for password.
 	 *
-	 * @param string $attribute the attribute currently being validated
-	 * @param array $params the additional name-value pairs given in the rule
+	 * @param string $attribute the attribute currently being validated.
+	 * @param array $params the additional name-value pairs given in the rule.
 	 **/
 	public function validatePassword($attribute, $params)
 	{
 		if (!$this->hasErrors()) {
-			$user = $this->getUser();
-			if (!$user || !$user->validatePassword($this->password)) {
-				$this->addError($attribute, Yii::getApp()->t('basic', 'Incorrect username or password.'));
+			$this->_user = $this->getUser();
+			if (!$this->_user || !$this->_user->validatePassword($this->password)) {
+				$this->addError($attribute, $this->app->t('basic', 'Incorrect username or password.'));
 			}
 		}
 	}
 
 	/**
+     * login
 	 * Logs in a user using the provided username and password.
-	 * @return bool whether the user is logged in successfully
+     *
+	 * @return bool whether the user is logged in successfully.
 	 **/
 	public function login()
 	{
 		if ($this->validate()) {
-			return Yii::getApp()->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
+			return $this->app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
 		}
 
 		return false;
 	}
 
 	/**
-	 * Finds user by [[username]].
-	 *
+     * getUser
+     * Finds user by [[username]].
+     *
 	 * @return User|null|true
 	 **/
 	public function getUser()
 	{
-		$user = new UserModels();
-
-		if ($this->_user === false) {
-			$this->_user = $user->findByUsername($this->username);
+ 		if ($this->_user === null) {
+			$this->_user = UserModels::findByUsername($this->username);
 		}
 
 		return $this->_user;

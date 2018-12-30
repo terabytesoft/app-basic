@@ -17,10 +17,15 @@ use yii\web\Response;
 use yii\web\filters\AccessControl;
 use yii\web\filters\VerbFilter;
 
+/**
+ * SiteController is the controller Web Application Basic.
+ **/
 class SiteController extends Controller
 {
 	/**
-	 * {@inheritdoc}
+     * behaviors
+     *
+	 * @return array behaviors config.
 	 **/
 	public function behaviors()
 	{
@@ -46,7 +51,9 @@ class SiteController extends Controller
 	}
 
 	/**
-	 * {@inheritdoc}
+     * actions
+     *
+	 * @return array actions config.
 	 **/
 	public function actions()
 	{
@@ -62,6 +69,7 @@ class SiteController extends Controller
 	}
 
 	/**
+     * actionIndex
 	 * Displays homepage.
 	 *
 	 * @return string
@@ -72,6 +80,7 @@ class SiteController extends Controller
 	}
 
 	/**
+     * actionLogin
 	 * Login action.
 	 *
 	 * @return Response|string
@@ -82,7 +91,7 @@ class SiteController extends Controller
 			return $this->goHome();
 		}
 
-		$model = new LoginForm();
+		$model = new LoginForm($this->app);
 
 		if ($model->load($this->app->request->post()) && $model->login()) {
 			return $this->goBack();
@@ -96,6 +105,7 @@ class SiteController extends Controller
 	}
 
 	/**
+     * actionLogout
 	 * Logout action.
 	 *
 	 * @return Response
@@ -108,13 +118,14 @@ class SiteController extends Controller
 	}
 
 	/**
+     * actionContact
 	 * Displays contact page.
 	 *
 	 * @return Response|string
 	 **/
 	public function actionContact()
 	{
-		$model = new ContactForm();
+		$model = new ContactForm($this->app);
 
 		if ($model->load($this->app->request->post()) && $model->contact($this->app->params['adminEmail'], $this->app->get('mailer'))) {
 			$this->app->session->setFlash('contactFormSubmitted');
@@ -128,6 +139,7 @@ class SiteController extends Controller
 	}
 
 	/**
+     * actionAbout
 	 * Displays about page.
 	 *
 	 * @return string
@@ -138,13 +150,14 @@ class SiteController extends Controller
 	}
 
 	/**
+     * actionSignup
 	 * Signs user up.
 	 *
 	 * @return mixed
 	 **/
 	public function actionSignup()
 	{
-		$model = new SignupForm();
+		$model = new SignupForm($this->app);
 
 		if ($model->load($this->app->request->post())) {
 			if ($user = $model->signup()) {
@@ -160,13 +173,14 @@ class SiteController extends Controller
 	}
 
 	/**
+     * actionRequestPasswordReset
 	 * Requests password reset.
 	 *
 	 * @return mixed
 	 **/
 	public function actionRequestPasswordReset()
 	{
-		$model = new PasswordResetRequestForm();
+		$model = new PasswordResetRequestForm($this->app);
 
 		if ($model->load($this->app->request->post()) && $model->validate()) {
 			if ($model->sendEmail($this->app->get('mailer'))) {
@@ -182,6 +196,7 @@ class SiteController extends Controller
 	}
 
 	/**
+     * actionResetPassword
 	 * Resets password.
 	 *
 	 * @param string $token
@@ -191,13 +206,13 @@ class SiteController extends Controller
 	public function actionResetPassword($token)
 	{
         try {
-			$model = new ResetPasswordForm();
+			$model = new ResetPasswordForm($this->app, $token);
 		} catch (InvalidArgumentException $e) {
 			throw new BadRequestHttpException($e->getMessage());
 		}
 
-    	$user = new UserModels();
-    
+        $user = new UserModels();
+        
 		if (empty($token) || !is_string($token)) {
 			$this->app->session->setFlash('danger', $this->app->t('basic', 'Password reset token cannot be blank.'));
 			return $this->goHome();

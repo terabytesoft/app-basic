@@ -4,6 +4,9 @@ namespace app\basic\assets;
 
 use yii\web\AssetBundle;
 
+/**
+ * AppAsset is the assets Web Application Basic.
+ **/
 class AppAsset extends AssetBundle
 {
     public $sourcePath = '@app/basic/assets/';

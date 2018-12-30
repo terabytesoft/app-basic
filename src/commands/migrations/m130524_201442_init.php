@@ -4,6 +4,9 @@ namespace app\basic\commands\migrations;
 
 use yii\db\Migration;
 
+/**
+ * m130524_201442_init is the migrations Web Application Basic.
+ **/
 class m130524_201442_init extends Migration
 {
 	public function up()

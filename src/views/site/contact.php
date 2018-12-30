@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * contact is the view Web Application Basic.
+ **/
+
 use yii\bootstrap4\ActiveForm;
 use yii\captcha\Captcha;
 use yii\helpers\Html;
