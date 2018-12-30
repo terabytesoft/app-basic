@@ -31,6 +31,7 @@ return [
     ],
     'mailer' => [
         '__class' => yii\swiftmailer\Mailer::class,
+        'useFileTransport' => $params['mailer.useFileTransport'],
     ],
     'db' => array_filter([
         '__class' => yii\db\Connection::class,
