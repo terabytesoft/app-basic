@@ -16,6 +16,8 @@ class SignupForm extends Model
 	public $password;
     public $verifyCode;
     
+    private $_user;
+
     protected $app;
 
     /**
@@ -72,7 +74,7 @@ class SignupForm extends Model
      * signup
 	 * Signs user up.
 	 *
-	 * @return User|null the saved model or null if saving fails.
+	 * @return UserModels|null the saved model or null if saving fails.
 	 **/
 	public function signup()
 	{
@@ -80,13 +82,13 @@ class SignupForm extends Model
 			return null;
 		}
 
-		$user = new UserModels();
+		$this->_user = new UserModels();
 
-		$user->username = $this->username;
-		$user->email = $this->email;
-		$user->setPassword($this->password);
-		$user->generateAuthKey();
+		$this->_user->username = $this->username;
+		$this->_user->email = $this->email;
+		$this->_user->setPassword($this->password);
+		$this->_user->generateAuthKey();
 
-		return $user->save() ? $user : null;
+		return $this->_user->save() ? $this->_user : null;
 	}
 }
