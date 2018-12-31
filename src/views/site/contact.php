@@ -95,7 +95,7 @@ $this->params['breadcrumbs'][] = $this->title;
 					'tabindex' => '4',
 				])->label('<b>' . $this->app->t('basic', 'Body') . '</b>') ?>
 
-			<?= $form->field($model, 'captcha', [
+			<?= $form->field($model, 'verifyCode', [
 				    'labelOptions' => ['id' => 'verifyCode'],
 				])->widget(Captcha::class, [
 					'template' => '{input}<div class="text-center">' . '<b>' .
