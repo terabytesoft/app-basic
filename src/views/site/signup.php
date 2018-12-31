@@ -48,14 +48,12 @@ $this->params['breadcrumbs'][] = $this->title;
 				'tabindex' => '1',
 			])->label('<b>' . $this->app->t('basic', 'Username') . '</b>') ?>
 		  
-		<?= $form->field($model, 'email', [
-				'inputOptions' => [
-					'oninput' => 'this.setCustomValidity("")',
-					'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Email Here') . '")',
-					'placeholder' => $this->app->t('basic', 'Email'),
-					'required' => true,
-					'tabindex' => '2',
-				],
+		<?= $form->field($model, 'email')->textInput([
+				'oninput' => 'this.setCustomValidity("")',
+				'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Email Here') . '")',
+				'placeholder' => $this->app->t('basic', 'Email'),
+				'required' => true,
+				'tabindex' => '2',
 			])->label('<b>' . $this->app->t('basic', 'Email') . '</b>') ?>
 
 		<?= $form->field($model, 'password')->passwordInput([

@@ -39,12 +39,12 @@ $this->params['breadcrumbs'][] = $this->title;
 		'validateOnChange' => false, ]) ?>
 
 		<?= $form->field($model, 'password')->passwordInput([
-			'autofocus' => true,
-			'oninput' => 'this.setCustomValidity("")',
-			'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Password Here') . '")',
-			'placeholder' => $this->app->t('basic', 'Password'),
-			'required' => true,
-			'tabindex' => '1',
+			    'autofocus' => true,
+			    'oninput' => 'this.setCustomValidity("")',
+			    'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Password Here') . '")',
+			    'placeholder' => $this->app->t('basic', 'Password'),
+			    'required' => true,
+			    'tabindex' => '1',
 			])->label('<b>' . $this->app->t('basic', 'Password') . '</b>') ?>
 
 		<?= Html::beginTag('div', ['class' => 'form-group']) ?>

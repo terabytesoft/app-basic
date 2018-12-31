@@ -37,17 +37,15 @@ $this->params['breadcrumbs'][] = $this->title;
 		'options' => ['class' => 'form-request-password'],
 		'validateOnType' => false,
 		'validateOnChange' => false, ]) ?>
-	
-		<?= $form->field($model, 'email', [
-				'inputOptions' => [
-					'autofocus' => true,
-					'oninput' => 'this.setCustomValidity("")',
-					'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Email Here') . '")',
-					'placeholder' => $this->app->t('basic', 'Email'),
-					'required' => true,
-					'tabindex' => '1',
-				],
-			])->label('<b>' . $this->app->t('basic', 'Email') . '</b>') ?>
+
+        <?= $form->field($model, 'email')->textInput([
+            	'autofocus' => true,
+			    'oninput' => 'this.setCustomValidity("")',
+			    'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Email Here') . '")',
+			    'placeholder' => $this->app->t('basic', 'Email'),
+			    'required' => true,
+			    'tabindex' => '1',
+			])->label('<b>' . $this->app->t('basic', 'Email') . '</b>') ?>  
 
 		<?= Html::beginTag('div', ['class' => 'form-group']) ?>
 			<?= Html::submitButton($this->app->t('basic', 'Send'), [

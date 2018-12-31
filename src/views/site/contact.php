@@ -62,33 +62,29 @@ $this->params['breadcrumbs'][] = $this->title;
 			'validateOnChange' => false, ]) ?>
 
 			<?= $form->field($model, 'name')->textInput([
-				'autofocus' => true,
-				'oninput' => 'this.setCustomValidity("")',
-				'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Username Here') . '")',
-				'placeholder' => $this->app->t('basic', 'Username'),
-				'required' => true,
-				'tabindex' => '1',
-				])->label('<b>' . $this->app->t('basic', 'Username') . '</b>') ?>
+			        'autofocus' => true,
+			        'oninput' => 'this.setCustomValidity("")',
+			        'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Username Here') . '")',
+			        'placeholder' => $this->app->t('basic', 'Username'),
+			        'required' => true,
+			        'tabindex' => '1',
+			    ])->label('<b>' . $this->app->t('basic', 'Username') . '</b>') ?>
 
-			<?= $form->field($model, 'email', [
-					'inputOptions' => [
-						'oninput' => 'this.setCustomValidity("")',
-						'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Email Here') . '")',
-						'placeholder' => $this->app->t('basic', 'Email'),
-						'required' => true,
-						'tabindex' => '2',
-					],
-				])->label('<b>' . $this->app->t('basic', 'Email') . '</b>') ?>
+            <?= $form->field($model, 'email')->textInput([
+				    'oninput' => 'this.setCustomValidity("")',
+				    'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Email Here') . '")',
+				    'placeholder' => $this->app->t('basic', 'Email'),
+				    'required' => true,
+				    'tabindex' => '2',
+				])->label('<b>' . $this->app->t('basic', 'Email') . '</b>') ?>  
 
-			<?= $form->field($model, 'subject', [
-					'inputOptions' => [
-						'oninput' => 'this.setCustomValidity("")',
-						'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Subject Here') . '")',
-						'placeholder' => $this->app->t('basic', 'Subject'),
-						'required' => true,
-						'tabindex' => '3',
-					],
-				])->label('<b>' . $this->app->t('basic', 'Subject') . '</b>') ?>
+            <?= $form->field($model, 'subject')->textInput([
+					'oninput' => 'this.setCustomValidity("")',
+					'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Subject Here') . '")',
+					'placeholder' => $this->app->t('basic', 'Subject'),
+					'required' => true,
+					'tabindex' => '3',
+				])->label('<b>' . $this->app->t('basic', 'Subject') . '</b>') ?>        
 
 			<?= $form->field($model, 'body')->textarea([
 					'oninput' => 'this.setCustomValidity("")',
@@ -99,8 +95,8 @@ $this->params['breadcrumbs'][] = $this->title;
 					'tabindex' => '4',
 				])->label('<b>' . $this->app->t('basic', 'Body') . '</b>') ?>
 
-			<?= $form->field($model, 'verifyCode', [
-				'labelOptions' => ['id' => 'verifyCode'],
+			<?= $form->field($model, 'captcha', [
+				    'labelOptions' => ['id' => 'verifyCode'],
 				])->widget(Captcha::class, [
 					'template' => '{input}<div class="text-center">' . '<b>' .
 						$this->app->t('basic', 'Captcha Code') . ':' . '</b>' . '{image}</div>',
