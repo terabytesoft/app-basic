@@ -23,16 +23,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
 	<?php $form = ActiveForm::begin([
 		'id' => 'form-signup',
-		'layout' => 'horizontal',
+		'layout' => 'default',
 		'fieldConfig' => [
 			'template' => '{input}{label}{hint}{error}',
-				'horizontalCssClasses' => [
-					'label' => '',
-					'offset' => '',
-					'wrapper' => '',
-					'error' => 'text-center',
-					'hint' => '',
-				],
+			'horizontalCssClasses' => [
+				'label' => '',
+				'offset' => '',
+				'wrapper' => '',
+				'error' => 'text-center',
+                'hint' => '',
+                'field' => 'form-label-group',
+			],
 			'options' => ['class' => 'form-label-group'],
 		],
 		'options' => ['class' => 'form-signup'],

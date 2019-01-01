@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 		<?php $form = ActiveForm::begin([
 			'id' => 'contact-form',
-			'layout' => 'horizontal',
+			'layout' => 'default',
 			'fieldConfig' => [
 				'template' => '{input}{label}{hint}{error}',
 				'horizontalCssClasses' => [

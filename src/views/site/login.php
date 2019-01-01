@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 	<?php $form = ActiveForm::begin([
 		'id' => 'login-form',
-		'layout' => 'horizontal',
+		'layout' => 'default',
 		'fieldConfig' => [
 			'template' => '{input}{label}{hint}{error}',
 			'horizontalCssClasses' => [
