@@ -25,13 +25,14 @@ $this->params['breadcrumbs'][] = $this->title;
 		'layout' => 'horizontal',
 		'fieldConfig' => [
 			'template' => '{input}{label}{hint}{error}',
-				'horizontalCssClasses' => [
-					'label' => '',
-					'offset' => '',
-					'wrapper' => '',
-					'error' => 'text-center',
-					'hint' => '',
-				],
+			'horizontalCssClasses' => [
+				'label' => '',
+				'offset' => '',
+				'wrapper' => '',
+				'error' => 'text-center',
+                'hint' => '',
+                'field' => 'form-label-group',
+			],
 			'options' => ['class' => 'form-label-group'],
 		],
 		'options' => ['class' => 'form-request-password'],
