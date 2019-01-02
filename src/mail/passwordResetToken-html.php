@@ -1,9 +1,10 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\helpers\Yii;
 
-$resetLink = Yii::getApp()->urlManager->createAbsoluteUrl(['site/reset-password', 'token' => $user->password_reset_token]);
+$resetLink = Url::to(['site/reset-password', 'token' => $user->password_reset_token], true);
 
 ?>
 
