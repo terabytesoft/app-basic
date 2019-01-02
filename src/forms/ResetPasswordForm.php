@@ -3,8 +3,8 @@
 namespace app\basic\forms;
 
 use app\basic\models\UserModels;
-use yii\base\Application;
 use yii\base\Model;
+use yii\helpers\Yii;
 
 /**
  * ResetPasswordForm is the model behind the reset password form Web Application Basic.
@@ -13,20 +13,7 @@ class ResetPasswordForm extends Model
 {
 	public $password;
 
-    private $_user;
-
-    protected $app;
-
-    /**
-     * __construct
-     *
-     * @param Application $app, string $token
-     **/
-    public function __construct(Application $app, string $token)
-    {
-        $this->app = $app;
-        $this->_user = UserModels::findByPasswordResetToken($token);
-    }
+    private $_User;
 
 	/**
      * rules
@@ -50,7 +37,7 @@ class ResetPasswordForm extends Model
 	public function attributeLabels()
 	{
 		return [
-			'password' => $this->app->t('basic', 'Password'),
+			'password' => Yii::t('basic', 'Password'),
 		];
 	}
 
@@ -58,13 +45,17 @@ class ResetPasswordForm extends Model
      * resetPassword
 	 * Resets password.
 	 *
+     * @param string $token.
+     * @param int $passwordResetTokenExpire password reset token.
 	 * @return bool if password was reset.
 	 **/
-	public function resetPassword()
+	public function resetPassword($token, int $passwordResetTokenExpire)
 	{
-		$this->_user->setPassword($this->password);
-		$this->_user->removePasswordResetToken();
+        $this->_User = new UserModels();
+        $this->_User = $this->_User->findByPasswordResetToken($token, $passwordResetTokenExpire);
+		$this->_User->setPassword($this->password);
+		$this->_User->removePasswordResetToken();
 
-		return $this->_user->save(false);
+		return $this->_User->save(false);
 	}
 }

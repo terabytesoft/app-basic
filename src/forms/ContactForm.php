@@ -2,9 +2,8 @@
 
 namespace app\basic\forms;
 
-use yii\base\Application;
 use yii\base\Model;
-use yii\mail\MailerInterface;
+use yii\helpers\Yii;
 
 /**
  * ContactForm is the model behind the contact form Web Application Basic.
@@ -16,18 +15,6 @@ class ContactForm extends Model
 	public $subject;
 	public $body;
 	public $verifyCode;
-
-	protected $app;
-
-    /**
-     * __construct
-     *
-     * @param Application $app
-     **/
-    public function __construct(Application $app)
-    {
-        $this->app = $app;
-    }
 
 	/**
      * rules
@@ -55,33 +42,12 @@ class ContactForm extends Model
 	public function attributeLabels()
 	{
 		return [
-			'body' => $this->app->t('basic', 'Body'),
-			'email' => $this->app->t('basic', 'Email'),
-			'name' => $this->app->t('basic', 'Name'),
-			'password' => $this->app->t('basic', 'Password'),
-			'subject' => $this->app->t('basic', 'Subject'),
-			'verifyCode' => $this->app->t('basic', 'VerifyCode'),
+			'body' => Yii::t('basic', 'Body'),
+			'email' => Yii::t('basic', 'Email'),
+			'name' => Yii::t('basic', 'Name'),
+			'password' => Yii::t('basic', 'Password'),
+			'subject' => Yii::t('basic', 'Subject'),
+			'verifyCode' => Yii::t('basic', 'VerifyCode'),
 		];
-	}
-
-	/**
-     * contact
-	 * Sends an email to the specified email address using the information collected by this model.
-     *
-	 * @param string $email the target email address.
-	 * @return bool whether the model passes validation.
-	 **/
-	public function contact(string $email, MailerInterface $mailer)
-	{
-		if ($this->validate()) {
-			$mailer->compose()
-				->setTo($email)
-				->setFrom([$this->email => $this->name])
-				->setSubject($this->subject)
-				->setTextBody($this->body)
-				->send();
-			return true;
-		}
-		return false;
 	}
 }

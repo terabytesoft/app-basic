@@ -3,8 +3,8 @@
 namespace app\basic\models;
 
 use yii\activerecord\ActiveRecord;
+use yii\base\Security;
 use yii\behaviors\TimestampBehavior;
-use yii\helpers\Yii;
 use yii\exceptions\NotSupportedException;
 use yii\web\IdentityInterface;
 
@@ -26,6 +26,19 @@ class UserModels extends ActiveRecord implements IdentityInterface
 {
 	const STATUS_DELETED = 0;
 	const STATUS_ACTIVE = 10;
+
+    protected $_Security;
+
+    /**
+     * __construct
+     *
+     * @param Application $app
+     **/
+    public function __construct()
+    {
+        $this->_Security = new Security();
+    }
+
 
     /**
      * tableName
@@ -100,11 +113,12 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	 * Finds user by password reset token.
 	 *
 	 * @param string $token password reset token.
+     * @param int $passwordResetTokenExpire password reset token.
 	 * @return static|null
 	 **/
-	public static function findByPasswordResetToken($token)
+	public static function findByPasswordResetToken($token, int $passwordResetTokenExpire)
 	{
-		if (!static::isPasswordResetTokenValid($token)) {
+		if (!static::isPasswordResetTokenValid($token, $passwordResetTokenExpire)) {
 			return null;
 		}
 
@@ -118,16 +132,17 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	 * Finds out if password reset token is valid.
 	 *
 	 * @param string $token password reset token.
+     * @param int $passwordResetTokenExpire password reset token.
 	 * @return bool
 	 **/
-	public static function isPasswordResetTokenValid($token)
+	public static function isPasswordResetTokenValid($token, int $passwordResetTokenExpire)
 	{
 		if (empty($token)) {
 			return false;
 		}
 
 		$timestamp = (int) substr($token, strrpos($token, '_') + 1);
-		$expire = Yii::getApp()->params['user.passwordResetTokenExpire'];
+		$expire = $passwordResetTokenExpire;
 
 		return $timestamp + $expire >= time();
 	}
@@ -171,7 +186,7 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	 **/
 	public function validatePassword($password)
 	{
-		return Yii::getApp()->security->validatePassword($password, $this->password_hash);
+		return $this->_Security->validatePassword($password, $this->password_hash);
 	}
 
 	/**
@@ -182,7 +197,7 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	 **/
 	public function setPassword($password)
 	{
-		$this->password_hash = Yii::getApp()->security->generatePasswordHash($password);
+		$this->password_hash = $this->_Security->generatePasswordHash($password);
 	}
 
 	/**
@@ -193,7 +208,7 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	 **/
 	public function generateAuthKey()
 	{
-		$this->auth_key = Yii::getApp()->security->generateRandomString();
+		$this->auth_key = $this->_Security->generateRandomString();
 	}
 
 	/**
@@ -204,7 +219,7 @@ class UserModels extends ActiveRecord implements IdentityInterface
 	 **/
 	public function generatePasswordResetToken()
 	{
-		$this->password_reset_token = Yii::getApp()->security->generateRandomString() . '_' . time();
+		$this->password_reset_token = $this->_Security->generateRandomString() . '_' . time();
 	}
 
 	/**

@@ -10,6 +10,8 @@ use app\basic\forms\SignupForm;
 use app\basic\models\UserModels;
 use yii\captcha\CaptchaAction;
 use yii\exceptions\InvalidArgumentException;
+use yii\base\Model;
+use yii\mail\MailerInterface;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\web\ErrorAction;
@@ -22,6 +24,8 @@ use yii\web\filters\VerbFilter;
  **/
 class SiteController extends Controller
 {
+    private $_User;
+
 	/**
      * behaviors
      *
@@ -93,7 +97,8 @@ class SiteController extends Controller
 
 		$model = new LoginForm($this->app);
 
-		if ($model->load($this->app->request->post()) && $model->login()) {
+		if ($model->load($this->app->request->post()) && $model->validate()) {
+            $this->login($model);
 			return $this->goBack();
 		}
 
@@ -125,11 +130,11 @@ class SiteController extends Controller
 	 **/
 	public function actionContact()
 	{
-		$model = new ContactForm($this->app);
+        $model = new ContactForm();
 
-		if ($model->load($this->app->request->post()) && $model->contact($this->app->params['adminEmail'], $this->app->get('mailer'))) {
+		if ($model->load($this->app->request->post()) && $model->validate()) {
+            $this->sendContact($this->app->params['adminEmail'], $this->app->mailer, $model);
 			$this->app->session->setFlash('contactFormSubmitted');
-
 			return $this->refresh();
 		}
 
@@ -157,11 +162,11 @@ class SiteController extends Controller
 	 **/
 	public function actionSignup()
 	{
-		$model = new SignupForm($this->app);
+		$model = new SignupForm();
 
 		if ($model->load($this->app->request->post())) {
-			if ($user = $model->signup()) {
-				if ($this->app->getUser()->login($user)) {
+			if ($this->_User = $model->signup()) {
+				if ($this->app->getUser()->login($this->_User)) {
 					return $this->goHome();
 				}
 			}
@@ -180,14 +185,20 @@ class SiteController extends Controller
 	 **/
 	public function actionRequestPasswordReset()
 	{
-		$model = new PasswordResetRequestForm($this->app);
+		$model = new PasswordResetRequestForm();
 
 		if ($model->load($this->app->request->post()) && $model->validate()) {
-			if ($model->sendEmail($this->app->get('mailer'))) {
-				$this->app->session->setFlash('success', $this->app->t('basic', 'Check your email for further instructions.'));
+			if ($this->sendResetPassword($this->app->mailer, $model)) {
+				$this->app->session->setFlash(
+                    'success',
+                    $this->app->t('basic', 'Check your email for further instructions.')
+                );
 				return $this->goHome();
 			}
-			$this->app->session->setFlash('error', $this->app->t('basic', 'Sorry, we are unable to reset password for the provided email address.'));
+			$this->app->session->setFlash(
+                'error',
+                $this->app->t('basic', 'Sorry, we are unable to reset password for the provided email address.')
+            );
 		}
 
 		return $this->render('requestPasswordResetToken', [
@@ -206,24 +217,25 @@ class SiteController extends Controller
 	public function actionResetPassword($token)
 	{
         try {
-			$model = new ResetPasswordForm($this->app, $token);
+			$model = new ResetPasswordForm();
 		} catch (InvalidArgumentException $e) {
 			throw new BadRequestHttpException($e->getMessage());
 		}
 
         $user = new UserModels();
-        
+        $tokenExpire = $this->app->params['user.passwordResetTokenExpire'];
+
 		if (empty($token) || !is_string($token)) {
 			$this->app->session->setFlash('danger', $this->app->t('basic', 'Password reset token cannot be blank.'));
 			return $this->goHome();
 		}
-   
-		if (!$user->findByPasswordResetToken($token)) {
+          
+		if (!$user->findByPasswordResetToken($token, $tokenExpire)) {
 			$this->app->session->setFlash('danger', $this->app->t('basic', 'Wrong password reset token.'));
 			return $this->goHome();
 		}
 
-		if ($model->load($this->app->request->post()) && $model->validate() && $model->resetPassword()) {
+		if ($model->load($this->app->request->post()) && $model->validate() && $model->resetPassword($token, $tokenExpire)) {
 			$this->app->session->setFlash('success', $this->app->t('basic', 'New password saved.'));
 			return $this->goHome();
 		}
@@ -231,5 +243,77 @@ class SiteController extends Controller
 		return $this->render('resetPassword', [
 			'model' => $model,
 		]);
+    }
+
+	/**
+     * login
+	 * Logs in a user using the provided username and password.
+     *
+     * @param Model $model.
+	 * @return bool whether the user is logged in successfully.
+	 **/
+	public function login(Model $model)
+	{
+		return $this->app->user->login($model->getUser(), $model->rememberMe ? 3600 * 24 * 30 : 0);
+	}
+
+    /**
+     * sendContactForm
+	 * Sends an email to the specified email address using the information collected by this model.
+     *
+	 * @param string $email the target email address.
+     * @param MailerInterface $mailer.
+     * @param Model $model.
+	 * @return bool whether the model passes validation.
+	 **/
+	public function sendContact(string $email, MailerInterface $mailer, Model $model)
+	{
+		$mailer->compose()
+		    ->setTo($email)
+			->setFrom([$model->email => $model->name])
+			->setSubject($model->subject)
+			->setTextBody($model->body)
+			->send();
+    }
+    
+	/**
+     * sendResetPassword
+	 * Sends an email with a link, for resetting the password.
+     *
+     * @param MailerInterface $mailer.
+     * @param Model $model.
+	 * @return bool whether the email was send.
+	 **/
+	public function sendResetPassword(MailerInterface $mailer, Model $model)
+	{
+        $this->_User = new UserModels();
+
+		$this->_User = $this->_User->findOne([
+			'status' => $this->_User::STATUS_ACTIVE,
+			'email' => $model->email,
+		]);
+
+		if (!$this->_User) {
+			return false;
+		}
+
+		if (!$this->_User->isPasswordResetTokenValid(
+            $this->_User->password_reset_token,
+            $this->app->params['user.passwordResetTokenExpire']
+        )) {
+			$this->_User->generatePasswordResetToken();
+			if (!$this->_User->save()) {
+				return false;
+			}
+		}
+
+        return $mailer->compose(
+			['html' => 'passwordResetToken-html', 'text' => 'passwordResetToken-text'],
+			['user' => $this->_User]
+		)
+		->setFrom([$this->app->params['adminEmail'] => $this->app->name . ' robot'])
+		->setTo($model->email)
+		->setSubject('Password reset for ' . $this->app->name)
+		->send();
 	}
 }

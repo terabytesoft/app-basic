@@ -3,8 +3,8 @@
 namespace app\basic\forms;
 
 use app\basic\models\UserModels;
-use yii\base\Application;
 use yii\base\Model;
+use yii\helpers\Yii;
 
 /**
  * SignupForm is the model behind the signup form Web Application Basic.
@@ -16,19 +16,7 @@ class SignupForm extends Model
 	public $password;
     public $verifyCode;
     
-    private $_user;
-
-    protected $app;
-
-    /**
-     * __construct
-     *
-     * @param Application $app
-     **/
-    public function __construct(Application $app)
-    {
-        $this->app = $app;
-    }
+    private $_User;
 
     /**
      * rules
@@ -63,10 +51,10 @@ class SignupForm extends Model
 	public function attributeLabels()
 	{
 		return [
-			'email' => $this->app->t('basic', 'Email'),
-			'username' => $this->app->t('basic', 'Username'),
-			'password' => $this->app->t('basic', 'Password'),
-			'verifyCode' => $this->app->t('basic', 'VerifyCode'),
+			'email' => Yii::t('basic', 'Email'),
+			'username' => Yii::t('basic', 'Username'),
+			'password' => Yii::t('basic', 'Password'),
+			'verifyCode' => Yii::t('basic', 'VerifyCode'),
 		];
 	}
 
@@ -82,13 +70,12 @@ class SignupForm extends Model
 			return null;
 		}
 
-		$this->_user = new UserModels();
+		$this->_User = new UserModels();
+		$this->_User->username = $this->username;
+		$this->_User->email = $this->email;
+		$this->_User->setPassword($this->password);
+		$this->_User->generateAuthKey();
 
-		$this->_user->username = $this->username;
-		$this->_user->email = $this->email;
-		$this->_user->setPassword($this->password);
-		$this->_user->generateAuthKey();
-
-		return $this->_user->save() ? $this->_user : null;
+		return $this->_User->save() ? $this->_User : null;
 	}
 }

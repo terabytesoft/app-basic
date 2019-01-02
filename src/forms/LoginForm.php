@@ -3,8 +3,8 @@
 namespace app\basic\forms;
 
 use app\basic\models\UserModels;
-use yii\base\Application;
 use yii\base\Model;
+use yii\helpers\Yii;
 
 /**
  * LoginForm is the model behind the login form Web Application Basic.
@@ -17,20 +17,8 @@ class LoginForm extends Model
 	public $password;
 	public $rememberMe = false;
 	public $verifyCode;
-
-    private $_user;
-
-    protected $app;
-
-    /**
-     * __construct
-     *
-     * @param Application $app
-     **/
-    public function __construct(Application $app)
-    {
-        $this->app = $app;
-    }
+ 
+    private $_User = null;
 
 	/**
      * rules
@@ -60,10 +48,10 @@ class LoginForm extends Model
 	public function attributeLabels()
 	{
 		return [
-			'username' => $this->app->t('basic', 'Username'),
-			'password' => $this->app->t('basic', 'Password'),
-			'rememberMe' => $this->app->t('basic', 'RememberMe'),
-			'verifyCode' => $this->app->t('basic', 'VerifyCode'),
+			'username' => Yii::t('basic', 'Username'),
+			'password' => Yii::t('basic', 'Password'),
+			'rememberMe' => Yii::t('basic', 'RememberMe'),
+			'verifyCode' => Yii::t('basic', 'VerifyCode'),
 		];
 	}
 
@@ -76,26 +64,11 @@ class LoginForm extends Model
 	public function validatePassword(string $attribute)
 	{
 		if (!$this->hasErrors()) {
-			$this->_user = $this->getUser();
-			if (!$this->_user || !$this->_user->validatePassword($this->password)) {
-				$this->addError($attribute, $this->app->t('basic', 'Incorrect username or password.'));
+			$this->_User = $this->getUser();
+			if (!$this->_User || !$this->_User->validatePassword($this->password)) {
+				$this->addError($attribute, Yii::t('basic', 'Incorrect username or password.'));
 			}
 		}
-	}
-
-	/**
-     * login
-	 * Logs in a user using the provided username and password.
-     *
-	 * @return bool whether the user is logged in successfully.
-	 **/
-	public function login()
-	{
-		if ($this->validate()) {
-			return $this->app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
-		}
-
-		return false;
 	}
 
 	/**
@@ -106,10 +79,11 @@ class LoginForm extends Model
 	 **/
 	public function getUser()
 	{
- 		if ($this->_user === null) {
-			$this->_user = UserModels::findByUsername($this->username);
+ 		if ($this->_User === null) {
+            $this->_User = new UserModels();
+			$this->_User = $this->_User->findByUsername($this->username);
 		}
 
-		return $this->_user;
+		return $this->_User;
 	}
 }
