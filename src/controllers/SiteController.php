@@ -95,7 +95,7 @@ class SiteController extends Controller
 			return $this->goHome();
 		}
 
-		$model = new LoginForm($this->app);
+		$model = new LoginForm();
 
 		if ($model->load($this->app->request->post()) && $model->validate()) {
             $this->login($model);

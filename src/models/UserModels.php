@@ -32,7 +32,7 @@ class UserModels extends ActiveRecord implements IdentityInterface
     /**
      * __construct
      *
-     * @param Application $app
+     * {@inheritdoc}
      **/
     public function __construct()
     {
