@@ -19,7 +19,7 @@ return [
         '__class' => yii\cache\Cache::class,
         'handler' => [
             '__class' => yii\cache\FileCache::class,
-            'keyPrefix' => 'my-project',
+            'keyPrefix' => 'my-project-basic',
         ],
     ],
     'db' => array_filter([
@@ -47,8 +47,8 @@ return [
         'translations' => [
             'basic' => [
                 '__class' => yii\i18n\PhpMessageSource::class,
-                'sourceLanguage' => 'en-US',
-                'basePath' => '@app/basic/messages',
+                'sourceLanguage' => $params['translator.sourceLanguage'],
+                'basePath' => $params['translator.basePath'],
             ],
         ],
     ],
