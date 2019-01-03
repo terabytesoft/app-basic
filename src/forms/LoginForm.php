@@ -4,6 +4,7 @@ namespace app\basic\forms;
 
 use app\basic\models\UserModels;
 use yii\base\Model;
+use yii\helpers\Yii;
 
 /**
  * LoginForm is the model behind the login form Web Application Basic.
