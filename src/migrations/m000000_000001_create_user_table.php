@@ -1,13 +1,13 @@
 <?php
 
-namespace app\basic\commands\migrations;
+namespace app\basic\migrations;
 
 use yii\db\Migration;
 
 /**
- * m130524_201442_init is the migrations Web Application Basic.
+ * m000000_000001_create_user_table is the migrations Web Application Basic.
  **/
-class m130524_201442_init extends Migration
+class m000000_000001_create_user_table extends Migration
 {
 	public function up()
 	{

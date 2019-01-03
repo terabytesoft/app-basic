@@ -55,6 +55,6 @@ return [
     Aliases::class => Reference::to('aliases'),
     'aliases' => array_merge($aliases, [
         '__class'   => yii\base\Aliases::class,
-        '@migrations' => '@app\basic\commands\migrations',
+        '@migrations' => 'app\basic\migrations',
     ]),
 ];
