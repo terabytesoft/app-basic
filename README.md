@@ -129,6 +129,13 @@ CONFIGURATION:
 
 - [config/web.php](config/web.php)
 
+### MIGRATIONS:
+
+```
+./vendor/bin/yii migrate/up --migrationPath=@migrations
+Apply the above migration? (yes|no) [no]:yes
+```
+
 ### WEB SERVER SUPPORT:
 
 - Apache.
