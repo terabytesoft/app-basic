@@ -4,7 +4,6 @@ namespace app\basic\forms;
 
 use app\basic\models\UserModels;
 use yii\base\Model;
-use yii\helpers\Yii;
 
 /**
  * PasswordResetRequestForm is the model behind the password reset request form Web Application Basic.
@@ -29,19 +28,6 @@ class PasswordResetRequestForm extends Model
 				'filter' => ['status' => UserModels::STATUS_ACTIVE],
 				'message' => Yii::t('basic', 'There is no user with this email address.'),
 			],
-		];
-	}
-
-	/**
-	 * atributeLabels
-	 * Translate Atribute Labels.
-     *
-	 * @return array customized attribute labels.
-	 **/
-	public function attributeLabels()
-	{
-		return [
-			'email' => Yii::t('basic', 'Email'),
 		];
 	}
 }

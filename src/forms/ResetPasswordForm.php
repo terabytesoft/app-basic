@@ -4,7 +4,6 @@ namespace app\basic\forms;
 
 use app\basic\models\UserModels;
 use yii\base\Model;
-use yii\helpers\Yii;
 
 /**
  * ResetPasswordForm is the model behind the reset password form Web Application Basic.
@@ -25,19 +24,6 @@ class ResetPasswordForm extends Model
 		return [
 			['password', 'required'],
 			['password', 'string', 'min' => 6],
-		];
-	}
-
-	/**
-	 * atributeLabels
-	 * Translate Atribute Labels.
-     *
-	 * @return array customized attribute labels.
-	 **/
-	public function attributeLabels()
-	{
-		return [
-			'password' => Yii::t('basic', 'Password'),
 		];
 	}
 

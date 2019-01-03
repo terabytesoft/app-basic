@@ -4,7 +4,6 @@ namespace app\basic\forms;
 
 use app\basic\models\UserModels;
 use yii\base\Model;
-use yii\helpers\Yii;
 
 /**
  * SignupForm is the model behind the signup form Web Application Basic.
@@ -39,22 +38,6 @@ class SignupForm extends Model
 			['password', 'string', 'min' => 6],
 			// verifyCode needs to be entered correctly
 			//['verifyCode', \yii\captcha\CaptchaValidator::class],
-		];
-	}
-
-	/**
-	 * atributeLabels
-	 * Translate Atribute Labels.
-     *
-	 * @return array customized attribute labels.
-	 **/
-	public function attributeLabels()
-	{
-		return [
-			'email' => Yii::t('basic', 'Email'),
-			'username' => Yii::t('basic', 'Username'),
-			'password' => Yii::t('basic', 'Password'),
-			'verifyCode' => Yii::t('basic', 'VerifyCode'),
 		];
 	}
 

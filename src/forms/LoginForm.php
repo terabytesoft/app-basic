@@ -4,7 +4,6 @@ namespace app\basic\forms;
 
 use app\basic\models\UserModels;
 use yii\base\Model;
-use yii\helpers\Yii;
 
 /**
  * LoginForm is the model behind the login form Web Application Basic.
@@ -36,22 +35,6 @@ class LoginForm extends Model
 			['password', 'validatePassword'],
 			// verifyCode needs to be entered correctly
 			//['verifyCode', \yii\captcha\CaptchaValidator::class],
-		];
-	}
-
-	/**
-	 * atributeLabels
-	 * Translate Atribute Labels.
-     *
-	 * @return array customized attribute labels.
-	 **/
-	public function attributeLabels()
-	{
-		return [
-			'username' => Yii::t('basic', 'Username'),
-			'password' => Yii::t('basic', 'Password'),
-			'rememberMe' => Yii::t('basic', 'RememberMe'),
-			'verifyCode' => Yii::t('basic', 'VerifyCode'),
 		];
 	}
 
