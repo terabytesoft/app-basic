@@ -151,20 +151,32 @@ return [
 All the configuration is customizable through parameters, there is no need to modify any configuration of Yii 3.0 Web Application Basic, if you need any extra configuration you can open an issue with pleasure we will add it.
 </p>
 
+Very important when changing any configuration run `composer du`, to apply it.
+
 ### **GENERATE MESSAGES TRANSLATION:**
 
 <p align="justify">
-To generate the Yii 3.0 Web Application Basic translations, you can change the language settings in: config/messages.php - [app-template-basic] / 'languages'=>['en'], automatically the generator will create the folder of your language in /messages - [app-template-basic], If any translation is needed, you can open an issue to add it.
+To generate the Yii 3.0 Web Application Basic translations, you can change the language settings in:
+<p>
+
+```
+config/messages.php - [app-template-basic]:
+
+'languages' => ['en'], 
+```
+<p align="justify">
+ Automatically the generator will create the folder of your language in /messages - [app-template-basic], If any translation is needed, you can open an issue to add it.
 </p>
 
 ```
+root directory - [app-template-basic]:
  ./vendor/bin/yii message config/messages.php
 ```
 
 ### **MIGRATIONS:**
 
 ```
-./vendor/bin/yii migrate/up --migrationPath=@migrations
+./vendor/bin/yii migrate
 Apply the above migration? (yes|no) [no]:yes
 ```
 
