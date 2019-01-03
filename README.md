@@ -40,8 +40,7 @@ App Web Application Basic of Yii Version 3.0 <a href="http://www.yiiframework.co
 
 </br>
 
-DIRECTORY STRUCTURE:
---------------------
+### **DIRECTORY STRUCTURE:**
 
 ```
 config/             contains application configurations
@@ -59,8 +58,7 @@ tests/              contains various tests for the basic application
 vendor/             contains dependent 3rd-party packages
 ```
 
-FEATURES:
----------
+### **FEATURES:**
 
 The App Web Application contains:
 
@@ -81,13 +79,11 @@ It includes all commonly used configurations that would allow you to focus on ad
 features to your application.
 </P>
 
-REQUIREMENTS:
--------------
+### **REQUIREMENTS:**
  
 The minimum requirement by this project template that your Web server supports PHP 7.1.
 
-INSTALLATION:
--------------
+### **INSTALLATION:**
 
 <p align="justify">
 If you do not have <a href="http://getcomposer.org/" title="Composer" target="_blank">Composer</a>, you may install it by following the instructions at <a href="http://getcomposer.org/doc/00-intro.md#installation-nix" title="getcomposer.org" target="_blank">getcomposer.org</a>.
@@ -108,46 +104,81 @@ directly under the Web root.
 <strong>App Web Application Basic (terabytesoft/app-basic) is installed automatically together with the Web Project Skeleton Application Basic (terabytesoft/app-template-basic), both try the necessary packages to start your Web Application Basic in Yii3.</strong>
 </p>
 
+__*Virtual Host:*__
+
 ~~~
 http://localhost/
 ~~~
 
-CONFIGURATION:
---------------
+__*Server Yii:*__
 
-### APP-BASIC SETUP DEFAULT:
+Directory - / [app-template-basic]
 
-- [config/common.php](config/common.php)
+~~~
+ ./vendor/bin/yii serve
+~~~
 
-- [config/console.php](config/console.php)
+### **CONFIGURATION:**
 
-- [config/env.php](config/env.php)
+**APP-BASIC SETUP DEFAULT:**
 
-- [config/messages.php](config/messages.php)
+```
+config/params.php - [app-template-basic]
 
-- [config/params.php](config/params.php)
+return [
+    // aplication:
+    'app.id' => 'my-project-basic',
+    'app.name' => 'My Project Basic',
+    'adminEmail' => 'admin@example.com',
+    'debug.allowedIPs' => ['127.0.0.1'],
+    'favicon.ico' => '@yii/app/../public/favicon.ico',
+    'user.passwordResetTokenExpire' => 3600,
+    // database:
+    'db.dsn' => 'mysql:host=localhost;dbname=your_database;charset=utf8',
+    'db.username' => 'your_username',
+    'db.password' => 'your_password',
+    // mailer:
+    'mailer.useFileTransport' => true,
+    // translator:
+    'i18n.locale' => 'en',
+    'translator.basePath' => dirname(__DIR__) . '/messages',
+    'translator.sourceLanguage' => 'en',
+];
+```
+**NOTE:** 
 
-- [config/web.php](config/web.php)
+<p align="justify">
+All the configuration is customizable through parameters, there is no need to modify any configuration of Yii 3.0 Web Application Basic, if you need any extra configuration you can open an issue with pleasure we will add it.
+</p>
 
-### MIGRATIONS:
+### **GENERATE MESSAGES TRANSLATION:**
+
+<p align="justify">
+To generate the Yii 3.0 Web Application Basic translations, you can change the language settings in: config/messages.php - [app-template-basic] / 'languages'=>['en'], automatically the generator will create the folder of your language in /messages - [app-template-basic], If any translation is needed, you can open an issue to add it.
+</p>
+
+```
+ ./vendor/bin/yii message config/messages.php
+```
+
+### **MIGRATIONS:**
 
 ```
 ./vendor/bin/yii migrate/up --migrationPath=@migrations
 Apply the above migration? (yes|no) [no]:yes
 ```
 
-### WEB SERVER SUPPORT:
+### **WEB SERVER SUPPORT:**
 
 - Apache.
 - Nginx.
 - OpenLiteSpeed.
 
-### DOCUMENTATION STYLE GUIDE:
+### **DOCUMENTATION STYLE GUIDE:**
 
 - [Style Guide](docs/DOCUMENTATION.md).
 
-LICENSE:
---------
+### **LICENSE:**
 
 [![License](https://poser.pugx.org/terabytesoft/app-basic/license)](https://packagist.org/packages/cjtterabytesoft/app)
 
