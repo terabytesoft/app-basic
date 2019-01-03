@@ -4,6 +4,7 @@ namespace app\basic\forms;
 
 use app\basic\models\UserModels;
 use yii\base\Model;
+use yii\helpers\Yii;
 
 /**
  * PasswordResetRequestForm is the model behind the password reset request form Web Application Basic.
