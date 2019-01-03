@@ -1,5 +1,8 @@
 <?php
 
+use yii\base\Aliases;
+use yii\di\Reference;
+
 return [
     'app' => [
         'basePath' => dirname(__DIR__) . '/src',
@@ -49,7 +52,7 @@ return [
             ],
         ],
     ],
-    yii\base\Aliases::class => Reference::to('aliases'),
+    Aliases::class => Reference::to('aliases'),
     'aliases' => array_merge($aliases, [
         '__class'   => yii\base\Aliases::class,
         '@migrations' => '@app\basic\commands\migrations',
