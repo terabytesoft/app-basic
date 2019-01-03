@@ -7,16 +7,14 @@ use yii\db\Migration;
  **/
 class m000000_000001_create_user_table extends Migration
 {
+    // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
+    private $_tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
+
     /**
      * {@inheritdoc}
      */
 	public function up()
 	{
-		if ($this->db->driverName === 'mysql') {
-			// http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
-			$tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
-		}
-
 		$this->createTable('{{%user}}', [
 			'id' =>$this->primaryKey(),
 			'username' =>$this->string()->notNull()->unique(),
@@ -28,7 +26,7 @@ class m000000_000001_create_user_table extends Migration
 			'status' =>$this->smallInteger()->notNull()->defaultValue(10),
 			'created_at' =>$this->integer()->notNull(),
 			'updated_at' =>$this->integer()->notNull(),
-		], $tableOptions);
+		], ($this->db->driverName === 'mysql') ? $this->_tableOptions : '');
 	}
 
     /**
