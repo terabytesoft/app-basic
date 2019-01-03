@@ -12,6 +12,20 @@ return [
         ],
         */
     ],
+    'cache' => [
+        '__class' => yii\cache\Cache::class,
+        'handler' => [
+            '__class' => yii\cache\FileCache::class,
+            'keyPrefix' => 'my-project',
+        ],
+    ],
+    'db' => array_filter([
+        '__class' => yii\db\Connection::class,
+        'dsn' => $params['db.dsn'],
+        'username' => $params['db.username'],
+        'password' => $params['db.password'],
+        'enableSchemaCache' => defined('YII_ENV') && YII_ENV !== 'dev',
+    ]),
     'logger' => [
         '__construct()' => [
             'targets' => [
@@ -22,24 +36,10 @@ return [
             ],
         ],
     ],
-    'cache' => [
-        '__class' => yii\cache\Cache::class,
-        'handler' => [
-            '__class' => yii\cache\FileCache::class,
-            'keyPrefix' => 'my-project',
-        ],
-    ],
     'mailer' => [
         '__class' => yii\swiftmailer\Mailer::class,
         'useFileTransport' => $params['mailer.useFileTransport'],
     ],
-    'db' => array_filter([
-        '__class' => yii\db\Connection::class,
-        'dsn' => $params['db.dsn'],
-        'username' => $params['db.username'],
-        'password' => $params['db.password'],
-        'enableSchemaCache' => defined('YII_ENV') && YII_ENV !== 'dev',
-    ]),
     'translator' => [
         'translations' => [
             'basic' => [
@@ -49,4 +49,9 @@ return [
             ],
         ],
     ],
+    yii\base\Aliases::class => Reference::to('aliases'),
+    'aliases' => array_merge($aliases, [
+        '__class'   => yii\base\Aliases::class,
+        '@migrations' => '@app\basic\commands\migrations',
+    ]),
 ];
