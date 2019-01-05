@@ -4,6 +4,10 @@ use yii\base\Aliases;
 use yii\di\Reference;
 
 return [
+    'aliases' => array_merge($aliases, [
+        '__class'   => yii\base\Aliases::class,
+        '@migrations' => 'app\basic\migrations',
+    ]),
     'app' => [
         'basePath' => dirname(__DIR__) . '/src',
         'controllerNamespace' => app\basic\commands::class,
@@ -52,9 +56,4 @@ return [
             ],
         ],
     ],
-    Aliases::class => Reference::to('aliases'),
-    'aliases' => array_merge($aliases, [
-        '__class'   => yii\base\Aliases::class,
-        '@migrations' => 'app\basic\migrations',
-    ]),
 ];

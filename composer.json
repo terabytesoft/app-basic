@@ -45,7 +45,9 @@
         "yiisoft/cache": "^3.0@dev",                
         "yiisoft/yii-debug": "^3.0@dev",
         "yiisoft/yii-gii": "^3.0@dev",
-        "phpunit/phpunit": "^7.0"
+        "yiisoft/yii-web": "^3.0@dev",
+        "foxy/foxy": "^1.0",
+        "hiqdev/composer-config-plugin": "^1.0@dev"
     },
     "extra": {
         "branch-alias": {

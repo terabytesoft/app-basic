@@ -15,7 +15,8 @@ return [
     // mailer:
 	'mailer.useFileTransport' => true,
     // translator:
-	'i18n.locale' => 'en',
+    'i18n.locale' => 'en',
+    'i18n.encoding' => 'UTF-8',
     'translator.basePath' => '@app/basic/messages',
     'translator.sourceLanguage' => 'en',
 ];
