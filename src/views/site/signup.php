@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	<?= Html::endTag('p') ?>
 
 	<?php $form = ActiveForm::begin([
-		'id' => 'form-signup',
+		'id' => 'signup-form',
 		'layout' => 'default',
 		'fieldConfig' => [
 			'template' => '{input}{label}{hint}{error}',
@@ -84,7 +84,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	
 		<?= Html::beginTag('div', ['class' => 'form-group']) ?>
 			<?= Html::submitButton($this->app->t('basic', 'Signup'), [
-				'class' => 'btn btn-lg btn-primary btn-block', 'name' => 'login-button', 'tabindex' => '5',
+				'class' => 'btn btn-lg btn-primary btn-block', 'name' => 'signup-button', 'tabindex' => '5',
 			]) ?>
 		<?= Html::endTag('div') ?>
 
