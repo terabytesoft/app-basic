@@ -67,7 +67,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			        'oninput' => 'this.setCustomValidity("")',
 			        'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Username Here') . '")',
 			        'placeholder' => $this->app->t('basic', 'Username'),
-			        'required' => true,
+			        'required' => (YII_ENV === 'test') ? false : true,
 			        'tabindex' => '1',
 			    ])->label('<b>' . $this->app->t('basic', 'Username') . '</b>') ?>
 
@@ -75,7 +75,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				    'oninput' => 'this.setCustomValidity("")',
 				    'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Email Here') . '")',
 				    'placeholder' => $this->app->t('basic', 'Email'),
-				    'required' => true,
+				    'required' => (YII_ENV === 'test') ? false : true,
 				    'tabindex' => '2',
 				])->label('<b>' . $this->app->t('basic', 'Email') . '</b>') ?>  
 
@@ -83,7 +83,7 @@ $this->params['breadcrumbs'][] = $this->title;
 					'oninput' => 'this.setCustomValidity("")',
 					'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Subject Here') . '")',
 					'placeholder' => $this->app->t('basic', 'Subject'),
-					'required' => true,
+					'required' => (YII_ENV === 'test') ? false : true,
 					'tabindex' => '3',
 				])->label('<b>' . $this->app->t('basic', 'Subject') . '</b>') ?>        
 
@@ -91,7 +91,7 @@ $this->params['breadcrumbs'][] = $this->title;
 					'oninput' => 'this.setCustomValidity("")',
 					'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Body Here') . '")',
 					'placeholder' => $this->app->t('basic', 'Body'),
-					'required' => true,
+					'required' => (YII_ENV === 'test') ? false : true,
 					'rows' => 6,
 					'tabindex' => '4',
 				])->label('<b>' . $this->app->t('basic', 'Body') . '</b>') ?>
@@ -106,7 +106,7 @@ $this->params['breadcrumbs'][] = $this->title;
 						'oninput' => 'this.setCustomValidity("")',
 						'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Captcha Code Here') . '")',
 						'placeholder' => $this->app->t('basic', 'Captcha Code'),
-						'required' => true,
+						'required' => (YII_ENV === 'test') ? false : true,
 						'style' => 'margin-bottom:10px',
 						'tabindex' => '5',
 					],

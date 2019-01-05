@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			    'oninput' => 'this.setCustomValidity("")',
 			    'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Password Here') . '")',
 			    'placeholder' => $this->app->t('basic', 'Password'),
-			    'required' => true,
+			    'required' => (YII_ENV === 'test') ? false : true,
 			    'tabindex' => '1',
 			])->label('<b>' . $this->app->t('basic', 'Password') . '</b>') ?>
 

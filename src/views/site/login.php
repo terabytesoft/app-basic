@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				'oninput' => 'this.setCustomValidity("")',
 				'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Username Here') . '")',
 				'placeholder' => $this->app->t('basic', 'Username'),
-				 'required' => true,
+				'required' => (YII_ENV === 'test') ? false : true,
 				'tabindex' => '1',
 			])->label('<b>' . $this->app->t('basic', 'Username') . '</b>') ?>
 
@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				'oninput' => 'this.setCustomValidity("")',
 				'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Password Here') . '")',
 				'placeholder' => $this->app->t('basic', 'Password'),
-				'required' => true,
+				'required' => (YII_ENV === 'test') ? false : true,
 				'tabindex' => '2',
 			])->label('<b>' . $this->app->t('basic', 'Password') . '</b>') ?>
 
@@ -71,7 +71,7 @@ $this->params['breadcrumbs'][] = $this->title;
 					'oninput' => 'this.setCustomValidity("")',
 					'oninvalid' => 'this.setCustomValidity("' . $this->app->t('basic', 'Enter Captcha Code Here') . '")',
 					'placeholder' => $this->app->t('basic', 'Captcha Code'),
-					'required' => true,
+					'required' => (YII_ENV === 'test') ? false : true,
 					'style' => 'margin-bottom:10px',
 					'tabindex' => '4',
 				],
