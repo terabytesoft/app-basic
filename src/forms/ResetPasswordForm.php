@@ -12,8 +12,6 @@ class ResetPasswordForm extends Model
 {
 	public $password;
 
-    private $_User;
-
 	/**
      * rules
      *
