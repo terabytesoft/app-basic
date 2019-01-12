@@ -192,5 +192,5 @@ Apply the above migration? (yes|no) [no]:yes
 
 ### **LICENSE:**
 
-[![License](https://poser.pugx.org/terabytesoft/app-basic/license)](https://packagist.org/packages/cjtterabytesoft/app)
+[![License](https://poser.pugx.org/terabytesoft/app-basic/license)](LICENSE.md)
 
