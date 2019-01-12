@@ -50,20 +50,6 @@ AppAsset::register($this);
 							['label' => $this->app->t('basic', 'Home'), 'url' => ['/site/index']],
 							['label' => $this->app->t('basic', 'About'), 'url' => ['/site/about']],
 							['label' => $this->app->t('basic', 'Contact'), 'url' => ['/site/contact']],
-							['label' => $this->app->t('basic', 'Signup'), 'url' => ['/site/signup']],
-							$this->app->user->isGuest ? (
-								['label' => $this->app->t('basic', 'Login'), 'url' => ['/site/login']]
-                            ) : (
-							    '<li>' .
-								    Html::beginForm(['/site/logout'], 'post') .
-									    Html::submitButton(
-										    $this->app->t('basic', 'Logout') .
-										    '(' . $this->app->user->identity->username . ')',
-										    ['class' => 'btn btn-link logout']
-									    ) .
-								    Html::endForm() .
-							    '</li>'
-							),
 						],
 					]);
 

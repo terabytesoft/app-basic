@@ -66,14 +66,6 @@ The App Web Application contains:
     - [about](docs/images/about.jpg)
     - [contact](docs/images/contact.jpg)
 
-
-- [x] User Functions - [Screenshots]:
-    - [signup](docs/images/signup.png)
-    - [login](docs/images/login.jpg)
-    - [request password reset](docs/images/request-paswword-reset.jpg)
-    - [reset password](docs/images/reset-password.jpg)
-    - [logout](docs/images/logout.jpg)
-
 <p align="justify">
 It includes all commonly used configurations that would allow you to focus on adding new
 features to your application.

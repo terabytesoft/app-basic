@@ -4,10 +4,6 @@ use yii\base\Aliases;
 use yii\di\Reference;
 
 return [
-    'aliases' => array_merge($aliases, [
-        '__class'   => yii\base\Aliases::class,
-        '@migrations' => 'app\basic\migrations',
-    ]),
     'app' => [
         'basePath' => dirname(__DIR__) . '/src',
         'controllerNamespace' => app\basic\commands::class,
@@ -26,13 +22,6 @@ return [
             'keyPrefix' => 'my-project-basic',
         ],
     ],
-    'db' => array_filter([
-        '__class' => yii\db\Connection::class,
-        'dsn' => $params['db.dsn'],
-        'username' => $params['db.username'],
-        'password' => $params['db.password'],
-        'enableSchemaCache' => defined('YII_ENV') && YII_ENV !== 'dev',
-    ]),
     'logger' => [
         '__construct()' => [
             'targets' => [
