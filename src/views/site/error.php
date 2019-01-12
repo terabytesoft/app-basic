@@ -19,11 +19,11 @@ $this->title = $name;
 	<?= Html::endTag('div') ?>
 
 	<?= Html::beginTag('p') ?>
-		<?= $this->app->t('basic', 'The above error occurred while the Web server was processing your request') ?>
+		<?= $this->getApp()->t('basic', 'The above error occurred while the Web server was processing your request') ?>
 	<?= Html::endTag('p') ?>
 
 	<?= Html::beginTag('p') ?>
-		<?= $this->app->t('basic', 'Please contact us if you think this is a server error. Thank you') ?>
+		<?= $this->getApp()->t('basic', 'Please contact us if you think this is a server error. Thank you') ?>
 	<?= Html::endTag('p') ?>
 
 <?php echo Html::endTag('div');

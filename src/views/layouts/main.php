@@ -19,7 +19,7 @@ AppAsset::register($this);
 <?php $this->beginPage() ?>
 
 	<!DOCTYPE html>
-	<?= Html::beginTag('html', ['lang' => $this->app->language]) ?>
+	<?= Html::beginTag('html', ['lang' => $this->getApp()->language]) ?>
 
 		<?= Html::beginTag('head') ?>
 			<?= Html::tag('meta', '', ['charset' => $this->getApp()->encoding]) ?>
@@ -37,8 +37,8 @@ AppAsset::register($this);
 				<?= Html::beginTag('wrapper', ['class' => 'd-flex flex-column']) ?>
 
 					<?php NavBar::begin([
-						'brandLabel' => $this->app->t('basic', $this->app->name),
-						'brandUrl' => $this->app->homeUrl,
+						'brandLabel' => $this->getApp()->t('basic', $this->getApp()->name),
+						'brandUrl' => $this->getApp()->homeUrl,
 						'options' => [
 						    'class' => 'navbar  navbar-dark bg-dark navbar-expand-lg',
 						],
@@ -47,9 +47,9 @@ AppAsset::register($this);
 					echo Nav::widget([
 						'options' => ['class' => 'navbar-nav float-right ml-auto'],
 						'items' => [
-							['label' => $this->app->t('basic', 'Home'), 'url' => ['/site/index']],
-							['label' => $this->app->t('basic', 'About'), 'url' => ['/site/about']],
-							['label' => $this->app->t('basic', 'Contact'), 'url' => ['/site/contact']],
+							['label' => $this->getApp()->t('basic', 'Home'), 'url' => ['/site/index']],
+							['label' => $this->getApp()->t('basic', 'About'), 'url' => ['/site/about']],
+							['label' => $this->getApp()->t('basic', 'Contact'), 'url' => ['/site/contact']],
 						],
 					]);
 
@@ -70,13 +70,13 @@ AppAsset::register($this);
 						<?= Html::beginTag('div', ['class' => 'container flex-fill']) ?>
 
 							<?= Html::beginTag('p', ['class' => 'float-left']) ?>
-								<?= '&copy; ' . $this->app->t('basic', 'My Company') . ' ' . date('Y') ?>
+								<?= '&copy; ' . $this->getApp()->t('basic', 'My Company') . ' ' . date('Y') ?>
 							<?= Html::endTag('p') ?>
 
 							<?= Html::beginTag('p', ['class' => 'float-right']) ?>
-								<?= $this->app->t('basic', 'Powered by') ?>
+								<?= $this->getApp()->t('basic', 'Powered by') ?>
 								<?= Html::a(
-									$this->app->t(
+									$this->getApp()->t(
 										'basic',
 										'Yii Framework'
 									),

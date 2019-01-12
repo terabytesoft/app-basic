@@ -3,7 +3,6 @@
 namespace app\basic\controllers;
 
 use app\basic\forms\ContactForm;
-use app\basic\models\UserModels;
 use yii\captcha\CaptchaAction;
 use yii\base\Model;
 use yii\mail\MailerInterface;
@@ -18,14 +17,12 @@ use yii\web\filters\VerbFilter;
  **/
 class SiteController extends Controller
 {
-    private $_User;
-
 	/**
      * behaviors
      *
 	 * @return array behaviors config.
 	 **/
-	public function behaviors()
+	public function behaviors(): array
 	{
 		return [
 			'access' => [
@@ -53,7 +50,7 @@ class SiteController extends Controller
      *
 	 * @return array actions config.
 	 **/
-	public function actions()
+	public function actions(): array
 	{
 		return [
 			'error' => [
@@ -72,7 +69,7 @@ class SiteController extends Controller
 	 *
 	 * @return string
 	 **/
-	public function actionIndex()
+	public function actionIndex(): string
 	{
 		return $this->render('index');
 	}
@@ -83,7 +80,7 @@ class SiteController extends Controller
 	 *
 	 * @return string
 	 **/
-	public function actionAbout()
+	public function actionAbout(): string
 	{
 		return $this->render('about');
 	}
@@ -92,15 +89,15 @@ class SiteController extends Controller
      * actionContact
 	 * Displays contact page.
 	 *
-	 * @return Response|string
+	 * @return response|string
 	 **/
 	public function actionContact()
 	{
         $model = new ContactForm();
 
-		if ($model->load($this->app->request->post()) && $model->validate()) {
-            $this->sendContact($this->app->params['adminEmail'], $model);
-			$this->app->session->setFlash('contactFormSubmitted');
+		if ($model->load($this->getApp()->request->post()) && $model->validate()) {
+            $this->sendContact($this->getApp()->params['adminEmail'], $model);
+			$this->getApp()->session->setFlash('contactFormSubmitted');
 			return $this->refresh();
 		}
 
@@ -117,9 +114,9 @@ class SiteController extends Controller
      * @param Model $model.
 	 * @return bool whether the model passes validation.
 	 **/
-	public function sendContact(string $email, Model $model)
+	public function sendContact(string $email, Model $model): void
 	{
-		$this->app->mailer->compose()
+		$this->getApp()->mailer->compose()
 		    ->setTo($email)
 			->setFrom([$model->email => $model->name])
 			->setSubject($model->subject)
