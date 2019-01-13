@@ -160,13 +160,6 @@ root directory - [app-template-basic]:
  ./vendor/bin/yii message config/messages.php
 ```
 
-### **MIGRATIONS:**
-
-```
-./vendor/bin/yii migrate
-Apply the above migration? (yes|no) [no]:yes
-```
-
 ### **WEB SERVER SUPPORT:**
 
 - Apache.
