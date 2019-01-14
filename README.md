@@ -47,12 +47,9 @@ config/             contains application configurations
 docs/               contains documentation app-basic
 src/
   assets/           contains assets definition
-  commands/         contains console commands (controllers)
   controllers/      contains Web controller classes
   forms/            contains models forms classes  
-  mail/             contains view files for e-mails
   messages/         contains messages translate application 
-  models/           contains model classes
   views/            contains view files for the Web application
 tests/              contains various tests for the basic application
 vendor/             contains dependent 3rd-party packages
