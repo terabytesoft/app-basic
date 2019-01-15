@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 	<?= Html::tag('h1', '<b>' . Html::encode($this->title) . '</b>', ['class' => 'text-center c-grey-900 mb-40']) ?>
 
-	<?php if ($this->getApp()->session->hasFlash('contactFormSubmitted')): ?>
+	<?php if ($this->getApp()->session->hasFlash('contactFormSubmitted')) : ?>
     	<?= Html::beginTag('div', ['class' => 'alert alert-success']) ?>
 			<?= Html::tag('p', $this->getApp()->t('basic', 'Thank you for contacting us. We will respond to you as soon ' .
 				'as possible.'))
@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			<?= $this->getApp()->t('basic', 'Note that if you turn on the Yii debugger, you should be able ' .
 				'to view the mail message on the mail panel of the debugger.') . '</br></br>'
 			?>
-			<?php if ($this->getApp()->get('mailer')->useFileTransport): ?>
+			<?php if ($this->getApp()->get('mailer')->useFileTransport) : ?>
 				<?= $this->getApp()->t('basic', 'Because the application is in development mode, the email is not sent but ' .
 					'saved as a file under:') . '</br>' ?> 
             	<?=	'<code>' . $this->getApp()->getAlias($this->getApp()->get('mailer')->fileTransportPath) . '</code>' . '</br></br>' ?>
@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
 					'application component to be false to enable email sending.') ?>				
 			<?php endif ?>
 		<?= Html::endTag('p') ?>
-	<?php else: ?>
+	<?php else : ?>
 		<?= Html::beginTag('p', ['class' => 'text-center mb-4']) ?>
 			<?= $this->getApp()->t('basic', 'If you have business inquiries or other questions,<br/> please fill out the ' .
 				'following form to contact us.<br/> <b>Thank you</b>.')
@@ -69,7 +69,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			        'placeholder' => $this->getApp()->t('basic', 'Username'),
 			        'required' => (YII_ENV === 'test') ? false : true,
 			        'tabindex' => '1',
-			    ])->label('<b>' . $this->getApp()->t('basic', 'Username') . '</b>') ?>
+			    ])->label($this->getApp()->t('basic', 'Username')) ?>
 
             <?= $form->field($model, 'email')->textInput([
 				    'oninput' => 'this.setCustomValidity("")',
@@ -77,7 +77,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				    'placeholder' => $this->getApp()->t('basic', 'Email'),
 				    'required' => (YII_ENV === 'test') ? false : true,
 				    'tabindex' => '2',
-				])->label('<b>' . $this->getApp()->t('basic', 'Email') . '</b>') ?>  
+				])->label($this->getApp()->t('basic', 'Email')) ?>  
 
             <?= $form->field($model, 'subject')->textInput([
 					'oninput' => 'this.setCustomValidity("")',
@@ -85,7 +85,7 @@ $this->params['breadcrumbs'][] = $this->title;
 					'placeholder' => $this->getApp()->t('basic', 'Subject'),
 					'required' => (YII_ENV === 'test') ? false : true,
 					'tabindex' => '3',
-				])->label('<b>' . $this->getApp()->t('basic', 'Subject') . '</b>') ?>        
+				])->label($this->getApp()->t('basic', 'Subject')) ?>        
 
 			<?= $form->field($model, 'body')->textarea([
 					'oninput' => 'this.setCustomValidity("")',
@@ -94,7 +94,7 @@ $this->params['breadcrumbs'][] = $this->title;
 					'required' => (YII_ENV === 'test') ? false : true,
 					'rows' => 6,
 					'tabindex' => '4',
-				])->label('<b>' . $this->getApp()->t('basic', 'Body') . '</b>') ?>
+				])->label($this->getApp()->t('basic', 'Body')) ?>
 
 			<?= $form->field($model, 'verifyCode', [
 				    'labelOptions' => ['id' => 'verifyCode'],
@@ -110,7 +110,7 @@ $this->params['breadcrumbs'][] = $this->title;
 						'style' => 'margin-bottom:10px',
 						'tabindex' => '5',
 					],
-			    ])->label('<b>' . $this->getApp()->t('basic', 'Captcha Code') . '</b>') ?>
+			    ])->label($this->getApp()->t('basic', 'Captcha Code')) ?>
 
 			<?= Html::beginTag('div', ['class' => 'form-group']) ?>
 				<?= Html::submitButton($this->getApp()->t('basic', 'Contact us'), [
