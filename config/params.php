@@ -5,7 +5,10 @@ return [
 	'app.id' => 'my-project-basic',
 	'app.name' => 'My Project Basic',
     'adminEmail' => 'admin@example.com',
-    'favicon.ico' => '@yii/app/../public/favicon.ico',
+	'favicon.ico' => '@yii/app/../public/favicon.ico',
+	// cookie validation:
+	'enableCookieValidation' => true,
+	'cookieValidationKey' => 'testme',
     // mailer:
 	'mailer.useFileTransport' => true,
     // translator:

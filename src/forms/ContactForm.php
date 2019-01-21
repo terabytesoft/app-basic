@@ -5,7 +5,9 @@ namespace app\basic\forms;
 use yii\base\Model;
 
 /**
- * ContactForm is the model behind the contact form Web Application Basic.
+ * ContactForm
+ *
+ * Model behind the contact form web application basic
  **/
 class ContactForm extends Model
 {
@@ -18,7 +20,7 @@ class ContactForm extends Model
 	/**
      * rules
      *
-	 * @return array the validation rules.
+	 * @return array the validation rules
 	 **/
 	public function rules(): array
 	{

@@ -1,7 +1,9 @@
 <?php
 
 /**
- * This is a configuration file for the [[\yii\console\controllers\MessageController]] console command.
+ * messages
+ *
+ * This is a configuration file for the [[\yii\console\controllers\MessageController]] console command
  *
  * In order to update translations, run the following console command:
  * php yii message messages/config.php

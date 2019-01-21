@@ -6,14 +6,7 @@ use yii\di\Reference;
 return [
     'app' => [
         'basePath' => dirname(__DIR__) . '/src',
-        'controllerNamespace' => app\basic\commands::class,
-        /*
-        'controllerMap' => [
-            'fixture' => [ // Fixture generation command line.
-                '__class' => 'yii\faker\FixtureController',
-            ],
-        ],
-        */
+        'controllerNamespace' => 'app\basic\controllers',
     ],
     'cache' => [
         '__class' => yii\cache\Cache::class,

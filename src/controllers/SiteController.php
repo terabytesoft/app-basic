@@ -3,8 +3,8 @@
 namespace app\basic\controllers;
 
 use app\basic\forms\ContactForm;
-use yii\captcha\CaptchaAction;
 use yii\base\Model;
+use yii\captcha\CaptchaAction;
 use yii\mail\MailerInterface;
 use yii\web\Controller;
 use yii\web\ErrorAction;
@@ -13,14 +13,16 @@ use yii\web\filters\AccessControl;
 use yii\web\filters\VerbFilter;
 
 /**
- * SiteController is the controller Web Application Basic.
+ * SiteController
+ *
+ * Controller web application basic
  **/
 class SiteController extends Controller
 {
 	/**
      * behaviors
      *
-	 * @return array behaviors config.
+	 * @return array behaviors config
 	 **/
 	public function behaviors(): array
 	{
@@ -48,7 +50,7 @@ class SiteController extends Controller
 	/**
      * actions
      *
-	 * @return array actions config.
+	 * @return array actions config
 	 **/
 	public function actions(): array
 	{
@@ -65,7 +67,8 @@ class SiteController extends Controller
 
 	/**
      * actionIndex
-	 * Displays homepage.
+	 *
+	 * displays homepage
 	 *
 	 * @return string
 	 **/
@@ -76,7 +79,8 @@ class SiteController extends Controller
 
 	/**
      * actionAbout
-	 * Displays about page.
+	 *
+	 * displays about page
 	 *
 	 * @return string
 	 **/
@@ -87,7 +91,8 @@ class SiteController extends Controller
 
 	/**
      * actionContact
-	 * Displays contact page.
+	 *
+	 * displays contact page
 	 *
 	 * @return response|string
 	 **/
@@ -108,11 +113,13 @@ class SiteController extends Controller
 
     /**
      * sendContactForm
-	 * Sends an email to the specified email address using the information collected by this model.
+	 *
+	 * sends an email to the specified email address using the information collected by this model
      *
-	 * @param string $email the target email address.
-     * @param Model $model.
-	 * @return bool whether the model passes validation.
+	 * @param string $email the target email address
+     * @param Model $model
+	 *
+	 * @return bool whether the model passes validation
 	 **/
 	public function sendContact(string $email, Model $model): void
 	{
@@ -122,5 +129,5 @@ class SiteController extends Controller
 			->setSubject($model->subject)
 			->setTextBody($model->body)
 			->send();
-    }    
+    }
 }

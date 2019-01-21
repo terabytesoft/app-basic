@@ -1,7 +1,9 @@
 /**
- * site is the css Web Application Basic.
+ * site.css
+ *
+ * CSS web application basic
  **/
- 
+
 /**********************************************************************************************************************
  * MAIN                                                                                                               *
  **********************************************************************************************************************/
@@ -23,16 +25,16 @@ a.desc:after {
 html, body {
 	height: 100vh;
 }
-  
+
 wrapper {
     min-height: 100vh;
     height: auto;
 }
-  
+
 wrapper > .container {
     padding: 35px 15px 20px;
 }
-  
+
 /**********************************************************************************************************************
  * BREADCRUMBS                                                                                                        *
  **********************************************************************************************************************/
@@ -52,7 +54,7 @@ wrapper > .container {
     padding: 10px 20px;
     margin: 0 0 15px 0;
 }
-  
+
 /**********************************************************************************************************************
  * FORMS                                                                                                              *
  **********************************************************************************************************************/
@@ -62,18 +64,18 @@ wrapper > .container {
     padding: 15px;
     margin: auto;
 }
-  
+
 .form-label-group {
     position: relative;
     margin-bottom: 1rem;
 }
-  
+
 .form-label-group > input,
-.form-label-group > label, 
+.form-label-group > label,
 .form-label-group > textarea {
     padding: var(--input-padding-y) var(--input-padding-x);
 }
-  
+
 .form-label-group > label {
     position: absolute;
     top: 0;
@@ -87,7 +89,7 @@ wrapper > .container {
     border-radius: .25rem;
     transition: all .1s ease-in-out;
 }
-  
+
 .form-label-group input::-webkit-input-placeholder {
     color: transparent;
 }
@@ -95,7 +97,7 @@ wrapper > .container {
 .form-label-group textarea::-webkit-input-placeholder {
     color: transparent;
 }
-  
+
 .form-label-group input::-ms-input-placeholder {
     color: transparent;
 }
@@ -119,7 +121,7 @@ wrapper > .container {
 .form-label-group textarea:-ms-input-placeholder {
     color: transparent;
 }
-  
+
 .form-label-group input::placeholder {
     color: transparent;
 }
@@ -127,7 +129,7 @@ wrapper > .container {
 .form-label-group textarea::placeholder {
     color: transparent;
 }
-  
+
 .form-label-group input:not(:placeholder-shown) {
     padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
     padding-bottom: calc(var(--input-padding-y) / 3);
@@ -137,7 +139,7 @@ wrapper > .container {
     padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
     padding-bottom: calc(var(--input-padding-y) / 3);
 }
-  
+
 .form-label-group input:not(:placeholder-shown) ~ label {
     padding-top: calc(var(--input-padding-y) / 3);
     padding-bottom: calc(var(--input-padding-y) / 3);
@@ -161,7 +163,7 @@ wrapper > .container {
     border-top: 1px solid #ddd;
     padding: 20px;
 }
-   
+
 /**********************************************************************************************************************
  * JUMBOTROM                                                                                                          *
  **********************************************************************************************************************/
@@ -169,12 +171,12 @@ wrapper > .container {
     text-align: center;
     background-color: transparent;
 }
-  
+
 .jumbotron .btn {
     font-size: 21px;
     padding: 14px 24px;
 }
- 
+
 /**********************************************************************************************************************
  * NOT-SET                                                                                                            *
  **********************************************************************************************************************/

@@ -2,15 +2,15 @@
 
 return [
     'app' => [
-        'controllerNamespace' => app\basic\controllers::class,
-    ],
-    'request' => [
-        'enableCookieValidation' => false,
-        // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-        'cookieValidationKey' => '',
-    ],
+        'controllerNamespace' => 'app\basic\controllers',
+	],
     'assetManager' => [
         'appendTimestamp' => true,
+    ],
+    'request' => [
+        'enableCookieValidation' => $params['enableCookieValidation'],
+        // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
+        'cookieValidationKey' => $params['cookieValidationKey'],
     ],
     'urlManager' => [
         'enablePrettyUrl' => true,
