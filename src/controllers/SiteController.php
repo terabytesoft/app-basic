@@ -19,34 +19,6 @@ use yii\web\Response;
 class SiteController extends Controller
 {
     /**
-     * behaviors.
-     *
-     * @return array behaviors config
-     **/
-    public function behaviors(): array
-    {
-        return [
-            'access' => [
-                '__class' => AccessControl::class,
-                'only'    => ['logout'],
-                'rules'   => [
-                    [
-                        'actions' => ['logout'],
-                        'allow'   => true,
-                        'roles'   => ['@'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                '__class' => VerbFilter::class,
-                'actions' => [
-                    'logout' => ['POST'],
-                ],
-            ],
-        ];
-    }
-
-    /**
      * actions.
      *
      * @return array actions config
