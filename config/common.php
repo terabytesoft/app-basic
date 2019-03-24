@@ -1,17 +1,15 @@
 <?php
 
-use yii\base\Aliases;
-use yii\di\Reference;
 
 return [
     'app' => [
-        'basePath' => dirname(__DIR__) . '/src',
+        'basePath'            => dirname(__DIR__).'/src',
         'controllerNamespace' => 'app\basic\controllers',
     ],
     'cache' => [
         '__class' => yii\cache\Cache::class,
         'handler' => [
-            '__class' => yii\cache\FileCache::class,
+            '__class'   => yii\cache\FileCache::class,
             'keyPrefix' => 'my-project-basic',
         ],
     ],
@@ -20,21 +18,21 @@ return [
             'targets' => [
                 [
                     '__class' => yii\log\FileTarget::class,
-                    'levels' => ['error', 'warning'],
+                    'levels'  => ['error', 'warning'],
                 ],
             ],
         ],
     ],
     'mailer' => [
-        '__class' => yii\swiftmailer\Mailer::class,
+        '__class'          => yii\swiftmailer\Mailer::class,
         'useFileTransport' => $params['mailer.useFileTransport'],
     ],
     'translator' => [
         'translations' => [
             'basic' => [
-                '__class' => yii\i18n\PhpMessageSource::class,
+                '__class'        => yii\i18n\PhpMessageSource::class,
                 'sourceLanguage' => $params['translator.sourceLanguage'],
-                'basePath' => $params['translator.basePath'],
+                'basePath'       => $params['translator.basePath'],
             ],
         ],
     ],

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * messages
+ * messages.
  *
  * This is a configuration file for the [[\yii\console\controllers\MessageController]] console command
  *
@@ -13,7 +13,7 @@
 
 return [
     // string, required, root directory of all source files
-    'sourcePath' => dirname(__DIR__) . '/src',
+    'sourcePath' => dirname(__DIR__).'/src',
     // array, required, list of language codes that the extracted messages
     // should be translated to. For example, ['zh-CN', 'de'].
     'languages' => ['en', 'es', 'ru'],
@@ -56,7 +56,7 @@ return [
     // 'php' output format is for saving messages to php files.
     'format' => 'php',
     // Root directory containing message translations.
-    'messagePath' => dirname(__DIR__) . '/src/messages',
+    'messagePath' => dirname(__DIR__).'/src/messages',
     // boolean, whether the message file should be overwritten with the merged messages
     'overwrite' => true,
     // Message categories to ignore
