@@ -20,9 +20,12 @@
     <a href="https://scrutinizer-ci.com/code-intelligence" target="_blank">
         <img src="https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/code-intelligence.svg?b=master" alt="Code Intelligence Status">
     </a>
-    <a href="https://codeclimate.com/github/terabytesoft/app-basic/maintainability" target="_blank">
-        <img src="https://api.codeclimate.com/v1/badges/fe720f0219c23dc3e237/maintainability" alt="Maintainability">
-    </a>
+	<a href="https://codeclimate.com/github/terabytesoft/app-basic/maintainability">
+		<img src="https://api.codeclimate.com/v1/badges/88fa672f3bb6614cbeb7/maintainability" />
+	</a>
+	<a href="https://github.styleci.io/repos/163105087">
+		<img src="https://github.styleci.io/repos/163105087/shield?branch=master" alt="StyleCI">
+	</a>	
     <a href="https://packagist.org/packages/terabytesoft/app-basic" target="_blank">
         <img src="https://poser.pugx.org/terabytesoft/app-basic/downloads" alt="Total Downloads">
     </a>
