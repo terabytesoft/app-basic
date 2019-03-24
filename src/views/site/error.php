@@ -1,11 +1,10 @@
 <?php
 
 /**
- * error
+ * error.
  *
  * View web application basic
  **/
-
 use yii\bootstrap4\Html;
 
 $this->title = $name;

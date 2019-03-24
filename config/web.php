@@ -3,7 +3,7 @@
 return [
     'app' => [
         'controllerNamespace' => 'app\basic\controllers',
-	],
+    ],
     'assetManager' => [
         'appendTimestamp' => true,
     ],
@@ -14,6 +14,6 @@ return [
     ],
     'urlManager' => [
         'enablePrettyUrl' => true,
-        'showScriptName' => false,
+        'showScriptName'  => false,
     ],
 ];

@@ -1,11 +1,10 @@
 <?php
 
 /**
- * index
+ * index.
  *
  * View web application basic
  **/
-
 use yii\bootstrap4\Html;
 
 $this->title = $this->app->t('basic', 'Index');
@@ -47,7 +46,7 @@ $this->title = $this->app->t('basic', 'Index');
 
 				<?= Html::beginTag('p') ?>
 					<?= Html::beginTag('a', ['class' => 'btn btn-default', 'href' => 'http://www.yiiframework.com/doc/']) ?>
-						<?= $this->app->t('basic', 'Yii Documentation') . ' &raquo;' ?>
+						<?= $this->app->t('basic', 'Yii Documentation').' &raquo;' ?>
 					<?= Html::endTag('a') ?>
 				<?= Html::endTag('p') ?>
 
@@ -66,7 +65,7 @@ $this->title = $this->app->t('basic', 'Index');
 
 				<?= Html::beginTag('p') ?>
 					<?= Html::beginTag('a', ['class' => 'btn btn-default', 'href' => 'http://www.yiiframework.com/forum/']) ?>
-						<?= $this->app->t('basic', 'Yii Forum') . ' &raquo;' ?>
+						<?= $this->app->t('basic', 'Yii Forum').' &raquo;' ?>
 					<?= Html::endTag('a') ?>
 				<?= Html::endTag('p') ?>
 
@@ -85,7 +84,7 @@ $this->title = $this->app->t('basic', 'Index');
 
 				<?= Html::beginTag('p') ?>
 					<?= Html::beginTag('a', ['class' => 'btn btn-default', 'href' => 'http://www.yiiframework.com/extensions/']) ?>
-						<?= $this->app->t('basic', 'Yii Extensions') . ' &raquo;' ?>
+						<?= $this->app->t('basic', 'Yii Extensions').' &raquo;' ?>
 					<?= Html::endTag('a') ?>
 				<?= Html::endTag('p') ?>
 

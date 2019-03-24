@@ -1,11 +1,10 @@
 <?php
 
 /**
- * main
+ * main.
  *
  * Layout web application basic
  **/
-
 use app\basic\assets\AppAsset;
 use app\widgets\Alert;
 use yii\bootstrap4\Html;
@@ -38,29 +37,29 @@ AppAsset::register($this);
 				<?= Html::beginTag('wrapper', ['class' => 'd-flex flex-column']) ?>
 
 					<?php NavBar::begin([
-						'brandLabel' => $this->app->t('basic', $this->app->name),
-						'brandUrl' => $this->app->homeUrl,
-						'options' => [
-						    'class' => 'navbar  navbar-dark bg-dark navbar-expand-lg',
-						],
-					]);
+                        'brandLabel' => $this->app->t('basic', $this->app->name),
+                        'brandUrl'   => $this->app->homeUrl,
+                        'options'    => [
+                            'class' => 'navbar  navbar-dark bg-dark navbar-expand-lg',
+                        ],
+                    ]);
 
-					echo Nav::widget([
-						'options' => ['class' => 'navbar-nav float-right ml-auto'],
-						'items' => [
-							['label' => $this->app->t('basic', 'Home'), 'url' => ['/site/index']],
-							['label' => $this->app->t('basic', 'About'), 'url' => ['/site/about']],
-							['label' => $this->app->t('basic', 'Contact'), 'url' => ['/site/contact']],
-						],
-					]);
+                    echo Nav::widget([
+                        'options' => ['class' => 'navbar-nav float-right ml-auto'],
+                        'items'   => [
+                            ['label' => $this->app->t('basic', 'Home'), 'url' => ['/site/index']],
+                            ['label' => $this->app->t('basic', 'About'), 'url' => ['/site/about']],
+                            ['label' => $this->app->t('basic', 'Contact'), 'url' => ['/site/contact']],
+                        ],
+                    ]);
 
-					NavBar::end(); ?>
+                    NavBar::end(); ?>
 
 					<?= Html::beginTag('div', ['class' => 'container flex-fill']) ?>
 
 						<?= Breadcrumbs::widget([
-							'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-						]) ?>
+                            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                        ]) ?>
                         <?= Alert::widget() ?>
 						<?= $content ?>
 
@@ -71,19 +70,19 @@ AppAsset::register($this);
 						<?= Html::beginTag('div', ['class' => 'container flex-fill']) ?>
 
 							<?= Html::beginTag('p', ['class' => 'float-left']) ?>
-								<?= '&copy; ' . $this->app->t('basic', 'My Company') . ' ' . date('Y') ?>
+								<?= '&copy; '.$this->app->t('basic', 'My Company').' '.date('Y') ?>
 							<?= Html::endTag('p') ?>
 
 							<?= Html::beginTag('p', ['class' => 'float-right']) ?>
 								<?= $this->app->t('basic', 'Powered by') ?>
 								<?= Html::a(
-									$this->app->t(
-										'basic',
-										'Yii Framework'
-									),
-									'http://www.yiiframework.com/',
-									['rel' => 'external']
-								) ?>
+                                    $this->app->t(
+                                        'basic',
+                                        'Yii Framework'
+                                    ),
+                                    'http://www.yiiframework.com/',
+                                    ['rel' => 'external']
+                                ) ?>
 							<?= Html::endTag('p') ?>
 
 						<?= Html::endTag('div') ?>
