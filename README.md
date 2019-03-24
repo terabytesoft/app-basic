@@ -25,10 +25,7 @@
 	</a>
 	<a href="https://github.styleci.io/repos/163105087">
 		<img src="https://github.styleci.io/repos/163105087/shield?branch=master" alt="StyleCI">
-	</a>	
-    <a href="https://packagist.org/packages/terabytesoft/app-basic" target="_blank">
-        <img src="https://poser.pugx.org/terabytesoft/app-basic/downloads" alt="Total Downloads">
-    </a>
+	</a>
 </p>
 
 </br>
@@ -173,4 +170,4 @@ root directory - [app-template-basic]:
 ### **LICENSE:**
 
 [![License](https://poser.pugx.org/terabytesoft/app-basic/license)](LICENSE.md)
-
+[![Total Downloads](https://poser.pugx.org/terabytesoft/app-basic/downloads)](https://packagist.org/packages/terabytesoft/app-basic)
