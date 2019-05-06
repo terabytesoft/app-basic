@@ -2,7 +2,8 @@
 
 return [
     'app' => [
-        'controllerNamespace' => 'TerabyteSoft\App\Basic\Controllers',
+		'controllerNamespace' => 'TerabyteSoft\App\Basic\Controllers',
+		'layout' => 'Main.php',
     ],
     'assetManager' => [
         'appendTimestamp' => true,

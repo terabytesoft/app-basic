@@ -45,7 +45,7 @@ class SiteController extends Controller
      **/
     public function actionIndex(): string
     {
-        return $this->render('index');
+        return $this->render('Index');
     }
 
     /**
@@ -57,7 +57,7 @@ class SiteController extends Controller
      **/
     public function actionAbout(): string
     {
-        return $this->render('about');
+        return $this->render('About');
     }
 
     /**
@@ -78,7 +78,7 @@ class SiteController extends Controller
             return $this->refresh();
         }
 
-        return $this->render('contact', [
+        return $this->render('Contact', [
             'model' => $model,
         ]);
     }
