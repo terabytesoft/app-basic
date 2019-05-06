@@ -1,8 +1,8 @@
 <?php
 
-namespace Terabytesoft\App\Basic\Controllers;
+namespace TerabyteSoft\App\Basic\Controllers;
 
-use Terabytesoft\App\Basic\Forms\ContactForm;
+use TerabyteSoft\App\Basic\Forms\ContactForm;
 use yii\base\Model;
 use Yiisoft\Yii\Captcha\CaptchaAction;
 use yii\web\Controller;

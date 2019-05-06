@@ -51,10 +51,10 @@
         "yiisoft/yii-web": "^3.0@dev"
     },
     "autoload": {
-        "psr-4": {"Terabytesoft\\App\\Basic\\": "src"}
+        "psr-4": {"TerabyteSoft\\App\\Basic\\": "src"}
     },
     "autoload-dev": {
-        "psr-4": {"Terabytesoft\\App\\Basic\\Tests\\": "tests"}
+        "psr-4": {"TerabyteSoft\\App\\Basic\\Tests\\": "tests"}
 	},
     "extra": {
         "branch-alias": {

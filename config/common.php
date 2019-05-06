@@ -4,7 +4,7 @@
 return [
     'app' => [
         'basePath'            => dirname(__DIR__).'/src',
-        'controllerNamespace' => 'Terabytesoft\App\Basic\Controllers',
+        'controllerNamespace' => 'TerabyteSoft\App\Basic\Controllers',
     ],
     'cache' => [
         '__class' => Yiisoft\Cache\Cache::class,

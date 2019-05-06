@@ -2,7 +2,7 @@
 
 return [
     'app' => [
-        'controllerNamespace' => 'app\basic\controllers',
+        'controllerNamespace' => 'TerabyteSoft\App\Basic\Controllers',
     ],
     'assetManager' => [
         'appendTimestamp' => true,

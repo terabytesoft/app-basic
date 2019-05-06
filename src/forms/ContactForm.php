@@ -1,6 +1,6 @@
 <?php
 
-namespace Terabytesoft\App\Basic\Forms;
+namespace TerabyteSoft\App\Basic\Forms;
 
 use yii\base\Model;
 

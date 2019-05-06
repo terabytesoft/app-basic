@@ -5,7 +5,7 @@ use yii\di\Reference;
 return [
     'app' => [
         'basePath' => dirname(__DIR__).'/src',
-        'controllerNamespace' => 'Terabytesoft\App\Basic\Controllers',
+        'controllerNamespace' => 'TerabyteSoft\App\Basic\Controllers',
     ],
     'aliases' => array_merge($aliases, [
         '__class'   => yii\base\Aliases::class,

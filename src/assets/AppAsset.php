@@ -1,6 +1,6 @@
 <?php
 
-namespace Terabytesoft\App\Basic\Assets;
+namespace TerabyteSoft\App\Basic\Assets;
 
 use yii\web\AssetBundle;
 
@@ -11,10 +11,10 @@ use yii\web\AssetBundle;
  **/
 class AppAsset extends AssetBundle
 {
-    public $sourcePath = '@Terabytesoft/App/Basic/Assets/';
+    public $sourcePath = '@TerabyteSoft/App/Basic/Assets/';
 
     public $css = [
-        'css/site.css',
+        'Css/site.css',
     ];
 
     public $js = [
