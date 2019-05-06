@@ -17,6 +17,6 @@ return [
     // translator:
     'i18n.locale'               => 'en',
     'i18n.encoding'             => 'UTF-8',
-    'translator.basePath'       => '@terabytesoft/app/basic/messages',
+    'translator.basePath'       => '@TerabyteSoft/App/Basic/Messages',
     'translator.sourceLanguage' => 'en',
 ];

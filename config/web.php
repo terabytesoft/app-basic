@@ -18,5 +18,11 @@ return [
     ],
     'user' => [
         'identityClass' => yii\web\User::class, // User must implement the IdentityInterface
+	],
+	'theme' => [
+        'pathMap' => [
+            '@app/views/layouts' => '@TerabyteSoft/App/Basic/Views/Layouts',
+           	'@app/views/site' => '@TerabyteSoft/App/Basic/Views/Site',
+        ],
     ],
 ];
