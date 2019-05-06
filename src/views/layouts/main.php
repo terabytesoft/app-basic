@@ -6,7 +6,7 @@
  * Layout web application basic
  **/
 use Terabytesoft\App\Basic\Assets\AppAsset;
-use app\widgets\Alert;
+use Terabytesoft\Widgets\Alert;
 use Yiisoft\Yii\Bootstrap4\Html;
 use Yiisoft\Yii\Bootstrap4\Nav;
 use Yiisoft\Yii\Bootstrap4\NavBar;
