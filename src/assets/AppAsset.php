@@ -1,6 +1,6 @@
 <?php
 
-namespace app\basic\assets;
+namespace Terabytesoft\App\Basic\Assets;
 
 use yii\web\AssetBundle;
 
@@ -11,7 +11,7 @@ use yii\web\AssetBundle;
  **/
 class AppAsset extends AssetBundle
 {
-    public $sourcePath = '@app/basic/assets/';
+    public $sourcePath = '@Terabytesoft/App/Basic/Assets/';
 
     public $css = [
         'css/site.css',
@@ -21,7 +21,7 @@ class AppAsset extends AssetBundle
     ];
 
     public $depends = [
-        \yii\jquery\YiiAsset::class,
-        \yii\bootstrap4\BootstrapAsset::class,
+		\Yiisoft\Yii\JQuery\YiiAsset::class,
+        \Yiisoft\Yii\Bootstrap4\BootstrapAsset::class,
     ];
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace app\basic\forms;
+namespace Terabytesoft\App\Basic\Forms;
 
 use yii\base\Model;
 
@@ -30,7 +30,7 @@ class ContactForm extends Model
             // email has to be a valid email address
             ['email', 'email'],
             // verifyCode needs to be entered correctly
-            //['verifyCode', \yii\captcha\CaptchaValidator::class],
+            ['verifyCode', \Yiisoft\Yii\Captcha\CaptchaValidator::class],
         ];
     }
 }

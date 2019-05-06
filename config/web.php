@@ -15,5 +15,8 @@ return [
     'urlManager' => [
         'enablePrettyUrl' => true,
         'showScriptName'  => false,
+	],
+    'user' => [
+        'identityClass' => yii\web\User::class, // User must implement the IdentityInterface
     ],
 ];

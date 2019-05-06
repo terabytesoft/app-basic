@@ -1,3 +1,6 @@
+# codeception coverage
+c3.php
+
 # composer itself is not needed
 composer.phar
 composer.lock

@@ -8,12 +8,15 @@ return [
     'favicon.ico' => '@yii/app/../public/favicon.ico',
     // cookie validation:
     'enableCookieValidation' => true,
-    'cookieValidationKey'    => 'testme',
+	'cookieValidationKey'    => 'testme',
+	// debug:
+	'debug.allowedIPs' => ['127.0.0.1', '::1', '*'],
+	'debug.enabled' => false,
     // mailer:
     'mailer.useFileTransport' => true,
     // translator:
     'i18n.locale'               => 'en',
     'i18n.encoding'             => 'UTF-8',
-    'translator.basePath'       => '@app/basic/messages',
+    'translator.basePath'       => '@terabytesoft/app/basic/messages',
     'translator.sourceLanguage' => 'en',
 ];

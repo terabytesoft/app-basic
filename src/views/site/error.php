@@ -5,7 +5,7 @@
  *
  * View web application basic
  **/
-use yii\bootstrap4\Html;
+use Yiisoft\Yii\Bootstrap4\Html;
 
 $this->title = $name;
 

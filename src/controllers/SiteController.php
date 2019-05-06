@@ -1,10 +1,10 @@
 <?php
 
-namespace app\basic\controllers;
+namespace Terabytesoft\App\Basic\Controllers;
 
-use app\basic\forms\ContactForm;
+use Terabytesoft\App\Basic\Forms\ContactForm;
 use yii\base\Model;
-use yii\captcha\CaptchaAction;
+use Yiisoft\Yii\Captcha\CaptchaAction;
 use yii\web\Controller;
 use yii\web\ErrorAction;
 use yii\web\filters\AccessControl;

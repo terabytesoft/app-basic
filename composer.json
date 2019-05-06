@@ -24,57 +24,54 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": ">=7.1.0",
+		"php": "^7.2",
+        "terabytesoft/alert": "^0.0.1@dev",
         "yiisoft/active-record": "^3.0@dev",
         "yiisoft/db-mysql": "^3.0@dev",
         "yiisoft/rbac": "^3.0@dev",
-        "yiisoft/view": "^3.0@dev",             
+        "yiisoft/view": "^3.0@dev",
         "yiisoft/yii-bootstrap4": "^3.0@dev",
         "yiisoft/yii-captcha": "^3.0@dev",
-        "yiisoft/yii-console": "^3.0@dev",     
+        "yiisoft/yii-console": "^3.0@dev",
         "yiisoft/yii-jquery": "^3.0@dev",
         "yiisoft/yii-swiftmailer": "^3.0@dev",
-        "yiisoft/yii-web": "^3.0@dev",
-        "hiqdev/composer-config-plugin": "^1.0@dev",
-        "terabytesoft/alert": "^0.0.1@dev",
-        "vlucas/phpdotenv": "^2.5"
+        "yiisoft/yii-web": "^3.0@dev"
     },
     "require-dev": {
+		"codeception/codeception": "^3.0",
+		"dms/phpunit-arraysubset-asserts": "^0.1.0",
+		"foxy/foxy": "^1.0",
+		"hiqdev/composer-config-plugin": "^1.0@dev",
         "yiisoft/di": "^3.0@dev",
-        "yiisoft/log": "^3.0@dev",
-        "yiisoft/cache": "^3.0@dev",                
+		"yiisoft/log": "^3.0@dev",
+		"yiisoft/log-target-file": "^3.0@dev",
+        "yiisoft/cache": "^3.0@dev",
         "yiisoft/yii-debug": "^3.0@dev",
         "yiisoft/yii-gii": "^3.0@dev",
-        "yiisoft/yii-web": "^3.0@dev",
-        "foxy/foxy": "^1.0",
-        "hiqdev/composer-config-plugin": "^1.0@dev"
+        "yiisoft/yii-web": "^3.0@dev"
     },
+    "autoload": {
+        "psr-4": {"Terabytesoft\\App\\Basic\\": "src"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Terabytesoft\\App\\Basic\\Tests\\": "tests"}
+	},
     "extra": {
         "branch-alias": {
             "dev-master": "0.0.1-dev"
         },
         "config-plugin": {
+            "defines": "config/defines.php",
             "params": "config/params.php",
             "common": "config/common.php",
-            "web": "config/web.php"
+            "web": "config/web.php",
+            "codecept": [
+                "$defines",
+                "$params",
+                "$common",
+                "$web",
+                "config/tests.php"
+            ]
         }
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-        }
-    ],
-    "autoload": {
-        "psr-4": {"app\\basic\\": "src"}
-    },
-    "autoload-dev": {
-        "psr-4": {"app\\basic\\tests\\": "tests"}
-    },
-    "config": {
-        "process-timeout": 1800,
-        "fxp-asset": {
-            "enabled": false
-        }
-    }
+	}
 }

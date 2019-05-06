@@ -5,9 +5,9 @@
  *
  * View web application basic
  **/
-use yii\bootstrap4\ActiveForm;
-use yii\bootstrap4\Html;
-use yii\captcha\Captcha;
+use Yiisoft\Yii\Bootstrap4\ActiveForm;
+use Yiisoft\Yii\Bootstrap4\Html;
+use Yiisoft\Yii\Captcha\Captcha;
 
 $this->title = $this->title = $this->app->t('basic', 'Contact');
 $this->params['breadcrumbs'][] = $this->title;
