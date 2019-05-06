@@ -8,10 +8,10 @@ return [
     'favicon.ico' => '@yii/app/../public/favicon.ico',
     // cookie validation:
     'enableCookieValidation' => true,
-	'cookieValidationKey'    => 'testme',
-	// debug:
-	'debug.allowedIPs' => ['127.0.0.1', '::1', '*'],
-	'debug.enabled' => false,
+    'cookieValidationKey'    => 'testme',
+    // debug:
+    'debug.allowedIPs' => ['127.0.0.1', '::1', '*'],
+    'debug.enabled' => false,
     // mailer:
     'mailer.useFileTransport' => true,
     // translator:
