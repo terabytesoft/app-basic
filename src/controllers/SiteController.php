@@ -31,7 +31,7 @@ class SiteController extends Controller
             ],
             'captcha' => [
                 '__class'         => CaptchaAction::class,
-                'fixedVerifyCode' => (YII_ENV === 'test') ? 'testme' : null,
+                'fixedVerifyCode' => 'testme',
             ],
         ];
     }
