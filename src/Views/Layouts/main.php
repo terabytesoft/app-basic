@@ -47,7 +47,7 @@ AppAsset::register($this);
                     echo Nav::widget([
                         'options' => ['class' => 'navbar-nav float-right ml-auto'],
                         'items'   => [
-                            ['label' => $this->app->t('basic', 'Home'), 'url' => ['/site/index']],
+                            ['label' => $this->app->t('basic', 'Home'), 'url' => [$this->app->homeUrl]],
                             ['label' => $this->app->t('basic', 'About'), 'url' => ['/site/about']],
                             ['label' => $this->app->t('basic', 'Contact'), 'url' => ['/site/contact']],
                         ],
