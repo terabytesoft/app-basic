@@ -17,7 +17,7 @@ class ContactFormTestCest extends \Codeception\Test\Unit
             [['name', 'email', 'subject', 'body'], 'required'],
             // email has to be a valid email address
             ['email', 'email'],
-		];
+        ];
         Assert::AssertArraySubset($this->_Model->rules(), $this->_Rules, true);
     }
 }

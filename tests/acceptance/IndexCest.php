@@ -13,6 +13,6 @@ class IndexCest
     public function indexPageTest(AcceptanceTester $I)
     {
         $I->wantTo('ensure that index page works.');
-		$I->see(Yii::t('basic', 'Congratulations'), 'h1');
+        $I->see(Yii::t('basic', 'Congratulations'), 'h1');
     }
 }
