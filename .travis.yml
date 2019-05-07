@@ -25,6 +25,8 @@ install:
     fi
 script:
   - |
-    vendor/bin/yii serve > /dev/null 2>&1 &
+    cd tests
+    php -S 127.0.0.1:8080 -t public > /dev/null 2>&1&
+    cd ..
     vendor/bin/codecept build
     vendor/bin/codecept run
