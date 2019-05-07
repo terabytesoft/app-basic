@@ -28,9 +28,6 @@ nbproject
 # phpunit itself is not needed
 phpunit.phar
 
-#test
-/tests
-
 # vagrant runtime
 /.vagrant
 

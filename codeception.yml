@@ -18,5 +18,4 @@ coverage:
     enable: true
     whitelist:
         include:
-            - src/Controllers/*
-            - src/Forms/*
+            - src/*
