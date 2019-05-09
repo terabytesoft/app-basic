@@ -30,5 +30,11 @@ return [
                 'basePath'       => $params['translator.basePath'],
             ],
         ],
+	],
+    'theme' => [
+        'pathMap' => [
+            '@app/views/layouts' => '@TerabyteSoft/App/Basic/Views/Layouts',
+            '@app/views/site' => '@TerabyteSoft/App/Basic/Views/Site',
+        ],
     ],
 ];

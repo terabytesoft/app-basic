@@ -27,8 +27,9 @@ class SiteController extends Controller
     {
         return [
             'error' => [
-                '__class' => ErrorAction::class,
-            ],
+				'__class' => ErrorAction::class,
+				'view' => '@TerabyteSoft/App/Basic/Views/Site/Error.php'
+			 ],
             'captcha' => [
                 '__class'         => CaptchaAction::class,
                 'fixedVerifyCode' => 'testme',
