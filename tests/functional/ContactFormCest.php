@@ -1,5 +1,8 @@
 <?php
 
+namespace AppBasic;
+
+use AppBasic\FunctionalTester;
 use yii\helpers\Yii;
 
 class ContactFormCest
@@ -14,7 +17,7 @@ class ContactFormCest
         $I->see(Yii::t('basic', 'Contact'), 'h1');
     }
 
-    public function contactFormSubmitFormEmptyDataTest(AcceptanceTester $I)
+    public function contactFormSubmitFormEmptyDataTest(FunctionalTester $I)
     {
         $I->amGoingTo('contact form submit form with empty data.');
         $I->submitForm('#contact-form', []);

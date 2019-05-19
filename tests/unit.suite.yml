@@ -3,8 +3,8 @@
 # Suite for unit or integration tests.
 
 actor: UnitTester
-class_name: CodeGuy
 modules:
     enabled:
         - Asserts
-        - \Helper\Unit
+        - \AppBasic\Helper\Unit
+    step_decorators: ~        

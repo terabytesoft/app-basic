@@ -1,23 +1,25 @@
 <?php
 
+namespace AppBasic;
+
 use DMS\PHPUnitExtensions\ArraySubset\Assert;
 use TerabyteSoft\App\Basic\Forms\ContactForm;
 
 class ContactFormTestCest extends \Codeception\Test\Unit
 {
-    private $_Model;
-    private $_Rules;
+    private $_model;
+    private $_rules;
 
     public function testContactFormRules()
     {
         // test rules form model.
-        $this->_Model = new ContactForm();
-        $this->_Rules = [
+        $this->_model = new ContactForm();
+        $this->_rules = [
             // name, email, subject and body are required
             [['name', 'email', 'subject', 'body'], 'required'],
             // email has to be a valid email address
             ['email', 'email'],
         ];
-        Assert::AssertArraySubset($this->_Model->rules(), $this->_Rules, true);
+        Assert::AssertArraySubset($this->_model->rules(), $this->_rules, true);
     }
 }

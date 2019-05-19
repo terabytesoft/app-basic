@@ -26,8 +26,6 @@
     "require": {
 		"php": "^7.2",
         "terabytesoft/alert": "^0.0.1@dev",
-        "yiisoft/active-record": "^3.0@dev",
-        "yiisoft/db-mysql": "^3.0@dev",
         "yiisoft/rbac": "^3.0@dev",
         "yiisoft/view": "^3.0@dev",
         "yiisoft/yii-bootstrap4": "^3.0@dev",
@@ -42,13 +40,11 @@
 		"dms/phpunit-arraysubset-asserts": "^0.1.0",
 		"foxy/foxy": "^1.0",
 		"hiqdev/composer-config-plugin": "^1.0@dev",
+        "yiisoft/cache": "^3.0@dev",
         "yiisoft/di": "^3.0@dev",
 		"yiisoft/log": "^3.0@dev",
 		"yiisoft/log-target-file": "^3.0@dev",
-        "yiisoft/cache": "^3.0@dev",
-        "yiisoft/yii-debug": "^3.0@dev",
-        "yiisoft/yii-gii": "^3.0@dev",
-        "yiisoft/yii-web": "^3.0@dev"
+        "yiisoft/yii-debug": "^3.0@dev"
     },
     "autoload": {
         "psr-4": {"TerabyteSoft\\App\\Basic\\": "src"}

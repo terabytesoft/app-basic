@@ -1,5 +1,6 @@
 <?php
 
+$params = $params ?? [];
 
 return [
     'app' => [
@@ -10,12 +11,26 @@ return [
         '__class' => Yiisoft\Cache\Cache::class,
         'handler' => [
             '__class'   => Yiisoft\Cache\FileCache::class,
-            'keyPrefix' => 'my-project-basic',
-        ],
+			'keyPrefix' => 'AppBasic'
+		],
     ],
-    'logger' => function () {
+    'file-rotator' => [
+        '__class' => Yiisoft\Log\FileRotator::class,
+        '__construct()' => [
+            10
+        ]
+    ],
+    'logger' => static function (\yii\di\Container $container) {
+        /** @var \yii\base\Aliases $aliases */
+        $aliases = $container->get('aliases');
+        $fileTarget = new \Yiisoft\Log\FileTarget(
+			$aliases->get('@runtime/logs/app.log'),
+			$container->get('file-rotator')
+		);
         return new \Yiisoft\Log\Logger([
-            new \Yiisoft\Log\FileTarget('/tmp/log.txt')
+            'file' => $fileTarget->setCategories(
+				['application']
+			),
         ]);
     },
     'mailer' => [

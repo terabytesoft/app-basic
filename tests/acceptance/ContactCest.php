@@ -1,10 +1,13 @@
 <?php
 
+namespace AppBasic;
+
+use AppBasic\AcceptanceTester;
 use yii\helpers\Yii;
 
 class ContactCest
 {
-    public function _before(FunctionalTester $I)
+    public function _before(AcceptanceTester $I)
     {
         $I->amOnPage('/site/contact');
     }

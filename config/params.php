@@ -2,13 +2,13 @@
 
 return [
     // aplication:
-    'app.id'      => 'my-project-basic',
+    'app.id'      => 'AppBasic',
     'app.name'    => 'My Project Basic',
     'adminEmail'  => 'admin@example.com',
     'favicon.ico' => '@yii/app/../public/favicon.ico',
     // cookie validation:
     'enableCookieValidation' => true,
-    'cookieValidationKey'    => 'testme',
+    'cookieValidationKey'    => 'AppBasic',
     // debug:
     'debug.allowedIPs' => ['127.0.0.1', '::1', '*'],
     'debug.enabled' => false,

@@ -11,10 +11,10 @@ use yii\web\AssetBundle;
  **/
 class AppAsset extends AssetBundle
 {
-    public $sourcePath = '@TerabyteSoft/App/Basic/Assets/';
+    public $sourcePath = __DIR__ . '/Css';
 
     public $css = [
-        'Css/site.css',
+        'Site.css',
     ];
 
     public $js = [
