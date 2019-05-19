@@ -6,5 +6,4 @@ namespace AppBasic\Helper;
 
 class Acceptance extends \Codeception\Module
 {
-
 }

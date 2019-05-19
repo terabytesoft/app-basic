@@ -5,7 +5,7 @@ namespace AppBasic;
 use DMS\PHPUnitExtensions\ArraySubset\Assert;
 use TerabyteSoft\App\Basic\Forms\ContactForm;
 
-class ContactFormTestCest extends \Codeception\Test\Unit
+class ContactFormTest extends \Codeception\Test\Unit
 {
     private $_model;
     private $_rules;

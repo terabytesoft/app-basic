@@ -6,5 +6,4 @@ namespace AppBasic\Helper;
 
 class Unit extends \Codeception\Module
 {
-
 }

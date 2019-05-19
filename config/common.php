@@ -11,8 +11,8 @@ return [
         '__class' => Yiisoft\Cache\Cache::class,
         'handler' => [
             '__class'   => Yiisoft\Cache\FileCache::class,
-			'keyPrefix' => 'AppBasic'
-		],
+            'keyPrefix' => 'AppBasic'
+        ],
     ],
     'file-rotator' => [
         '__class' => Yiisoft\Log\FileRotator::class,
@@ -24,13 +24,13 @@ return [
         /** @var \yii\base\Aliases $aliases */
         $aliases = $container->get('aliases');
         $fileTarget = new \Yiisoft\Log\FileTarget(
-			$aliases->get('@runtime/logs/app.log'),
-			$container->get('file-rotator')
-		);
+            $aliases->get('@runtime/logs/app.log'),
+            $container->get('file-rotator')
+        );
         return new \Yiisoft\Log\Logger([
             'file' => $fileTarget->setCategories(
-				['application']
-			),
+                ['application']
+            ),
         ]);
     },
     'mailer' => [
