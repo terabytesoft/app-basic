@@ -121,7 +121,7 @@ Directory - / [app-template-basic]
 
 ### **CONFIGURATION:**
 
-- [Detailed Settings](docs\Config.MD).
+- [Detailed Settings](docs/Config.MD).
 
 **NOTE:** 
 
