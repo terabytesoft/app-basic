@@ -15,9 +15,9 @@ use Yiisoft\Yii\Bootstrap4\Breadcrumbs;
 AppAsset::register($this);
 
 if ($this->app->user->isGuest) {
-	$menuItems = $this->app->params['app.basic.menu.isguest'];
+    $menuItems = $this->app->params['app.basic.menu.isguest'];
 } else {
-		$menuItems = $this->app->params['app.basic.menu.logged'];
+    $menuItems = $this->app->params['app.basic.menu.logged'];
 }
 
 ?>

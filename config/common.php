@@ -3,9 +3,9 @@
 return [
     'app' => [
         'basePath'            => dirname(__DIR__).'/src',
-		'controllerNamespace' => 'TerabyteSoft\App\Basic\Controllers',
-		'id' => $params['app.basic.id'],
-		'name' => $params['app.basic.name'],
+        'controllerNamespace' => 'TerabyteSoft\App\Basic\Controllers',
+        'id' => $params['app.basic.id'],
+        'name' => $params['app.basic.name'],
     ],
     'cache' => [
         '__class' => Yiisoft\Cache\Cache::class,
@@ -35,7 +35,7 @@ return [
     'translator' => [
         'translations' => [
             'AppBasic' => [
-				'basePath'       => $params['app.basic.translator.basePath'],
+                'basePath'       => $params['app.basic.translator.basePath'],
                 '__class'        => yii\i18n\PhpMessageSource::class,
                 'sourceLanguage' => $params['app.basic.translator.sourceLanguage'],
             ],
