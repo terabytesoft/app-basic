@@ -1,11 +1,11 @@
 <?php
 
-$params = $params ?? [];
-
 return [
     'app' => [
         'basePath'            => dirname(__DIR__).'/src',
-        'controllerNamespace' => 'TerabyteSoft\App\Basic\Controllers',
+		'controllerNamespace' => 'TerabyteSoft\App\Basic\Controllers',
+		'id' => $params['app.basic.id'],
+		'name' => $params['app.basic.name'],
     ],
     'cache' => [
         '__class' => Yiisoft\Cache\Cache::class,
@@ -20,36 +20,31 @@ return [
             10
         ]
     ],
-    'logger' => static function (\yii\di\Container $container) {
-        /** @var \yii\base\Aliases $aliases */
-        $aliases = $container->get('aliases');
-        $fileTarget = new \Yiisoft\Log\FileTarget(
-            $aliases->get('@runtime/logs/app.log'),
-            $container->get('file-rotator')
-        );
-        return new \Yiisoft\Log\Logger([
-            'file' => $fileTarget->setCategories(
-                ['application']
-            ),
-        ]);
-    },
+    'logger' => [
+        '__class' => Yiisoft\Log\Logger::class,
+        '__construct()' => [
+            'setTargets' => [
+                ['__class' => Yiisoft\Log\FileTarget::class]
+            ],
+        ],
+    ],
     'mailer' => [
         '__class'          => Yiisoft\Yii\SwiftMailer\Mailer::class,
         'useFileTransport' => $params['mailer.useFileTransport'],
     ],
     'translator' => [
         'translations' => [
-            'basic' => [
+            'AppBasic' => [
+				'basePath'       => $params['app.basic.translator.basePath'],
                 '__class'        => yii\i18n\PhpMessageSource::class,
-                'sourceLanguage' => $params['translator.sourceLanguage'],
-                'basePath'       => $params['translator.basePath'],
+                'sourceLanguage' => $params['app.basic.translator.sourceLanguage'],
             ],
         ],
     ],
     'theme' => [
         'pathMap' => [
-            '@app/views/layouts' => '@TerabyteSoft/App/Basic/Views/Layouts',
-            '@app/views/site' => '@TerabyteSoft/App/Basic/Views/Site',
+            '@app/views/layouts' => $params['app.basic.theme.pathmap.layout'],
+            '@app/views/site'    => $params['app.basic.theme.pathmap.site'],
         ],
     ],
 ];

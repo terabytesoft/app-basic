@@ -2,9 +2,6 @@
 
 return [
     // aplication:
-    'app.id'      => 'AppBasic',
-    'app.name'    => 'My Project Basic',
-    'adminEmail'  => 'admin@example.com',
     'favicon.ico' => '@yii/app/../public/favicon.ico',
     // cookie validation:
     'enableCookieValidation' => true,
@@ -17,6 +14,4 @@ return [
     // translator:
     'i18n.locale'               => 'en',
     'i18n.encoding'             => 'UTF-8',
-    'translator.basePath'       => '@TerabyteSoft/App/Basic/Messages',
-    'translator.sourceLanguage' => 'en',
 ];

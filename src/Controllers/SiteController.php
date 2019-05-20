@@ -28,11 +28,11 @@ class SiteController extends Controller
         return [
             'error' => [
                 '__class' => ErrorAction::class,
-                'view' => '@TerabyteSoft/App/Basic/Views/Site/Error.php'
+                'view' => $this->app->params['app.basic.error.view.pathmap'],
              ],
             'captcha' => [
                 '__class'         => CaptchaAction::class,
-                'fixedVerifyCode' => 'testme',
+                'fixedVerifyCode' => $this->app->params['app.basic.captcha.fixedVerifyCode'],
             ],
         ];
     }
@@ -72,9 +72,9 @@ class SiteController extends Controller
     {
         $model = new ContactForm();
 
-        if ($model->load($this->getApp()->request->post()) && $model->validate()) {
-            $this->sendContact($this->getApp()->params['adminEmail'], $model);
-            $this->getApp()->session->setFlash('contactFormSubmitted');
+        if ($model->load($this->app->request->post()) && $model->validate()) {
+            $this->sendContact($this->app->params['app.basic.email'], $model);
+            $this->app->session->setFlash('contactFormSubmitted');
 
             return $this->refresh();
         }
@@ -96,7 +96,7 @@ class SiteController extends Controller
      **/
     public function sendContact(string $email, Model $model): void
     {
-        $this->getApp()->mailer->compose()
+        $this->app->mailer->compose()
             ->setTo($email)
             ->setFrom([$model->email => $model->name])
             ->setSubject($model->subject)

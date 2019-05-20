@@ -58,7 +58,10 @@
         },
         "config-plugin": {
             "defines": "config/defines.php",
-            "params": "config/params.php",
+            "params": [
+				"config/appbasic.php",
+				"config/params.php"
+			],
             "common": "config/common.php",
             "web": "config/web.php",
             "codecept": [

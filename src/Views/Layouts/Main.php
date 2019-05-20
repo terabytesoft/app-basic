@@ -14,6 +14,12 @@ use Yiisoft\Yii\Bootstrap4\Breadcrumbs;
 
 AppAsset::register($this);
 
+if ($this->app->user->isGuest) {
+	$menuItems = $this->app->params['app.basic.menu.isguest'];
+} else {
+		$menuItems = $this->app->params['app.basic.menu.logged'];
+}
+
 ?>
 
 <?php $this->beginPage() ?>
@@ -37,7 +43,7 @@ AppAsset::register($this);
 				<?= Html::beginTag('wrapper', ['class' => 'd-flex flex-column']) ?>
 
 					<?php NavBar::begin([
-                        'brandLabel' => $this->app->t('basic', $this->app->name),
+                        'brandLabel' => $this->app->t('AppBasic', $this->app->name),
                         'brandUrl'   => $this->app->homeUrl,
                         'options'    => [
                             'class' => 'navbar  navbar-dark bg-dark navbar-expand-lg',
@@ -46,11 +52,7 @@ AppAsset::register($this);
 
                     echo Nav::widget([
                         'options' => ['class' => 'navbar-nav float-right ml-auto'],
-                        'items'   => [
-                            ['label' => $this->app->t('basic', 'Home'), 'url' => [$this->app->homeUrl]],
-                            ['label' => $this->app->t('basic', 'About'), 'url' => ['/site/about']],
-                            ['label' => $this->app->t('basic', 'Contact'), 'url' => ['/site/contact']],
-                        ],
+                        'items'   => $menuItems,
                     ]);
 
                     NavBar::end(); ?>
@@ -70,14 +72,14 @@ AppAsset::register($this);
 						<?= Html::beginTag('div', ['class' => 'container flex-fill']) ?>
 
 							<?= Html::beginTag('p', ['class' => 'float-left']) ?>
-								<?= '&copy; '.$this->app->t('basic', 'My Company').' '.date('Y') ?>
+								<?= $this->app->params['app.basic.autor']?>
 							<?= Html::endTag('p') ?>
 
 							<?= Html::beginTag('p', ['class' => 'float-right']) ?>
-								<?= $this->app->t('basic', 'Powered by') ?>
+								<?= $this->app->t('AppBasic', 'Powered by') ?>
 								<?= Html::a(
                                     $this->app->t(
-                                        'basic',
+                                        'AppBasic',
                                         'Yii Framework'
                                     ),
                                     'http://www.yiiframework.com/',
