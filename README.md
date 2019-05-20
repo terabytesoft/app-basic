@@ -3,44 +3,43 @@
         <img src="https://farm1.staticflickr.com/887/27875183957_69a3645a56_q.jpg" height="100px;">
     </a>
     <h1 align="center">Yii 3.0 Web Application Basic</h1>
-	<table>
-  		<tr align="left">
-    		<th>Travis CI</th>
-			<th>Scrutinizer CI</th>
-			<th>CodeClimate</th>
-			<th>Style CI</th>
-  		</tr>
-  		<tr>
-			<th>
-				<a href="https://travis-ci.org/terabytesoft/app-basic.svg?branch=master" target="_blank">
-        			<img src="https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/build.png?b=master" alt="Build Status">
-    			</a>
-			</th>
-			<th>
-    			<a href="https://scrutinizer-ci.com/g/terabytesoft/app-basic/build-status/master" target="_blank">
-        			<img src="https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/build.png?b=master" alt="Build Status">
-    			</a>
-    			<a href="https://scrutinizer-ci.com/g/terabytesoft/app-basic/?branch=master" target="_blank">
-        			<img src="https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/quality-score.png?b=master" alt="Code Quality">
-    			</a>
-    			<a href="https://scrutinizer-ci.com/code-intelligence" target="_blank">
-        			<img src="https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/code-intelligence.svg?b=master" alt="Code Intelligence Status">
-    			</a>
-			</th>
-			<th>
-				<a href="https://codeclimate.com/github/terabytesoft/app-basic/maintainability">
-					<img src="https://api.codeclimate.com/v1/badges/88fa672f3bb6614cbeb7/maintainability" />
-				</a>			
-			</th>
-			<th>
-				<a href="https://github.styleci.io/repos/163105087">
-					<img src="https://github.styleci.io/repos/163105087/shield?branch=master" alt="StyleCI">
-				</a>			
-			</th>
-  		</tr>
-</table>	
 </p>
-
+<table style="display:flex;justify-content:center;">
+	<tr align="left">
+  		<th>Travis CI</th>
+		<th>Scrutinizer CI</th>
+		<th>CodeClimate</th>
+		<th>Style CI</th>
+	</tr>
+	<tr>
+		<th>
+			<a href="https://travis-ci.org/terabytesoft/app-basic.svg?branch=master" target="_blank">
+   				<img src="https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/build.png?b=master" alt="Build Status">
+    		</a>
+		</th>
+		<th>
+    		<a href="https://scrutinizer-ci.com/g/terabytesoft/app-basic/build-status/master" target="_blank">
+        		<img src="https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/build.png?b=master" alt="Build Status">
+    		</a>
+    		<a href="https://scrutinizer-ci.com/g/terabytesoft/app-basic/?branch=master" target="_blank">
+        		<img src="https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/quality-score.png?b=master" alt="Code Quality">
+    		</a>
+    		<a href="https://scrutinizer-ci.com/code-intelligence" target="_blank">
+        		<img src="https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/code-intelligence.svg?b=master" alt="Code Intelligence Status">
+    		</a>
+		</th>
+		<th>
+			<a href="https://codeclimate.com/github/terabytesoft/app-basic/maintainability">
+				<img src="https://api.codeclimate.com/v1/badges/88fa672f3bb6614cbeb7/maintainability" />
+			</a>			
+		</th>
+		<th>
+			<a href="https://github.styleci.io/repos/163105087">
+				<img src="https://github.styleci.io/repos/163105087/shield?branch=master" alt="StyleCI">
+			</a>			
+		</th>
+  	</tr>
+</table>	
 </br>
 
 <p align="justify">
