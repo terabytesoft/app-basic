@@ -61,19 +61,19 @@
 /** app basic menu user is logged, install before https://github.com/terabytesoft/app-user **/
 'app.basic.menu.logged' => [
     [
-        'label' =>  $this->app->t('ModuleUser', 'Manage Users'),
+        'label' => Yii::t('ModuleUser', 'Manage Users'),
         'url' => ['/user/admin/index'],
     ],
     [
-        'label' =>  $this->app->t('ModuleUser', 'Settings Account'),
+        'label' => Yii::t('ModuleUser', 'Settings Account'),
         'url' => ['/user/settings/account'],
     ],
     [
-        'label' =>  $this->app->t('ModuleUser', 'Settings Profile'),
+        'label' => Yii::t('ModuleUser', 'Settings Profile'),
         'url' => ['/user/settings/profile'],
     ],
     [
-        'label' =>  $this->app->t('ModuleUser', 'Logout'),
+        'label' => Yii::t('ModuleUser', 'Logout'),
         'url' => ['/user/security/logout'],
         'linkOptions' => ['data-method' => 'POST'],
     ],
