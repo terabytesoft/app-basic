@@ -3,29 +3,42 @@
         <img src="https://farm1.staticflickr.com/887/27875183957_69a3645a56_q.jpg" height="100px;">
     </a>
     <h1 align="center">Yii 3.0 Web Application Basic</h1>
-</p>
-
-</br>
-
-<p align="center">
-    <a href="https://www.yiiframework.com/" target="_blank">
-        <img src="https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)" alt="Yii Framework">
-    </a>
-    <a href="https://scrutinizer-ci.com/g/terabytesoft/app-basic/build-status/master" target="_blank">
-        <img src="https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/build.png?b=master" alt="Build Status">
-    </a>
-    <a href="https://scrutinizer-ci.com/g/terabytesoft/app-basic/?branch=master" target="_blank">
-        <img src="https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/quality-score.png?b=master" alt="Code Quality">
-    </a>
-    <a href="https://scrutinizer-ci.com/code-intelligence" target="_blank">
-        <img src="https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/code-intelligence.svg?b=master" alt="Code Intelligence Status">
-    </a>
-	<a href="https://codeclimate.com/github/terabytesoft/app-basic/maintainability">
-		<img src="https://api.codeclimate.com/v1/badges/88fa672f3bb6614cbeb7/maintainability" />
-	</a>
-	<a href="https://github.styleci.io/repos/163105087">
-		<img src="https://github.styleci.io/repos/163105087/shield?branch=master" alt="StyleCI">
-	</a>
+	<table>
+  		<tr align="left">
+    		<th>Travis CI</th>
+			<th>Scrutinizer CI</th>
+			<th>CodeClimate</th>
+			<th>Style CI</th>
+  		</tr>
+  		<tr>
+			<th>
+				<a href="https://travis-ci.org/terabytesoft/app-basic.svg?branch=master" target="_blank">
+        			<img src="https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/build.png?b=master" alt="Build Status">
+    			</a>
+			</th>
+			<th>
+    			<a href="https://scrutinizer-ci.com/g/terabytesoft/app-basic/build-status/master" target="_blank">
+        			<img src="https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/build.png?b=master" alt="Build Status">
+    			</a>
+    			<a href="https://scrutinizer-ci.com/g/terabytesoft/app-basic/?branch=master" target="_blank">
+        			<img src="https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/quality-score.png?b=master" alt="Code Quality">
+    			</a>
+    			<a href="https://scrutinizer-ci.com/code-intelligence" target="_blank">
+        			<img src="https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/code-intelligence.svg?b=master" alt="Code Intelligence Status">
+    			</a>
+			</th>
+			<th>
+				<a href="https://codeclimate.com/github/terabytesoft/app-basic/maintainability">
+					<img src="https://api.codeclimate.com/v1/badges/88fa672f3bb6614cbeb7/maintainability" />
+				</a>			
+			</th>
+			<th>
+				<a href="https://github.styleci.io/repos/163105087">
+					<img src="https://github.styleci.io/repos/163105087/shield?branch=master" alt="StyleCI">
+				</a>			
+			</th>
+  		</tr>
+</table>	
 </p>
 
 </br>
@@ -46,11 +59,11 @@ App Web Application Basic of Yii Version 3.0 <a href="http://www.yiiframework.co
 config/             contains application configurations
 docs/               contains documentation app-basic
 src/
-  assets/           contains assets definition
-  controllers/      contains Web controller classes
-  forms/            contains models forms classes  
-  messages/         contains messages translate application 
-  views/            contains view files for the Web application
+  Assets/           contains assets definition
+  Controllers/      contains Web controller classes
+  Forms/            contains models forms classes  
+  Messages/         contains messages translate application 
+  Views/            contains view files for the Web application
 tests/              contains various tests for the basic application
 vendor/             contains dependent 3rd-party packages
 ```
@@ -70,7 +83,7 @@ features to your application.
 
 ### **REQUIREMENTS:**
  
-The minimum requirement by this project template that your Web server supports PHP 7.1.
+The minimum requirement by this project template that your Web server supports PHP 7.2.
 
 ### **INSTALLATION:**
 
@@ -109,26 +122,8 @@ Directory - / [app-template-basic]
 
 ### **CONFIGURATION:**
 
-**APP-BASIC SETUP DEFAULT:**
+- [Detailed Settings](docs\Config.MD).
 
-```
-config/params.php - [app-template-basic]
-
-return [
-    // aplication:
-    'app.id' => 'my-project-basic',
-    'app.name' => 'My Project Basic',
-    'adminEmail' => 'admin@example.com',
-    'debug.allowedIPs' => ['127.0.0.1'],
-    'favicon.ico' => '@yii/app/../public/favicon.ico',
-    // mailer:
-    'mailer.useFileTransport' => true,
-    // translator:
-    'i18n.locale' => 'en',
-    'translator.basePath' => dirname(__DIR__) . '/messages',
-    'translator.sourceLanguage' => 'en',
-];
-```
 **NOTE:** 
 
 <p align="justify">
@@ -165,9 +160,10 @@ root directory - [app-template-basic]:
 
 ### **DOCUMENTATION STYLE GUIDE:**
 
-- [Style Guide](docs/DOCUMENTATION.md).
+[Style CI Documentation PSR2.](https://docs.styleci.io/presets#psr2)
 
-### **LICENSE:**
+### **LICENCE:**
 
+[![YiiFramework](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](https://www.yiiframework.com/)
 [![License](https://poser.pugx.org/terabytesoft/app-basic/license)](LICENSE.md)
 [![Total Downloads](https://poser.pugx.org/terabytesoft/app-basic/downloads)](https://packagist.org/packages/terabytesoft/app-basic)
