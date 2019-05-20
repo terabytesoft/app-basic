@@ -24,14 +24,14 @@
 
 /** app basic menu user is guest only https://github.com/terabytesoft/app-basic **/
 'app.basic.menu.isguest' => [
-	[
-		'label' => Yii::t('AppBasic', 'About'),
-		'url' => ['/site/about']
-	],
-	[
-		'label' => Yii::t('AppBasic', 'Contact'),
-		'url' => ['/site/contact']
-	],
+    [
+        'label' => Yii::t('AppBasic', 'About'),
+        'url' => ['/site/about']
+    ],
+    [
+        'label' => Yii::t('AppBasic', 'Contact'),
+        'url' => ['/site/contact']
+    ],
 ],
 
 /** app basic menu user is user logged only https://github.com/terabytesoft/app-basic **/
@@ -40,43 +40,43 @@
 
 /** app basic menu user is guest install before https://github.com/terabytesoft/app-user **/
 'app.basic.menu.isguest' => [
-	[
-		'label' => Yii::t('AppBasic', 'About'),
-		'url' => ['/site/about']
-	],
-	[
-		'label' => Yii::t('AppBasic', 'Contact'),
-		'url' => ['/site/contact']
-	],
-	[
-	    'label' => Yii::t('ModuleUser', 'Sign up'),
-	    'url' => ['/user/registration/register'],
-	],
-	[
-	    'label' => Yii::t('ModuleUser', 'Login'),
-	    'url' => ['/user/security/login']
-	],
+    [
+        'label' => Yii::t('AppBasic', 'About'),
+        'url' => ['/site/about']
+    ],
+    [
+        'label' => Yii::t('AppBasic', 'Contact'),
+        'url' => ['/site/contact']
+    ],
+    [
+        'label' => Yii::t('ModuleUser', 'Sign up'),
+        'url' => ['/user/registration/register'],
+    ],
+    [
+        'label' => Yii::t('ModuleUser', 'Login'),
+        'url' => ['/user/security/login']
+    ],
 ],
 
 /** app basic menu user is logged, install before https://github.com/terabytesoft/app-user **/
 'app.basic.menu.logged' => [
-	[
+    [
         'label' =>  $this->app->t('ModuleUser', 'Manage Users'),
         'url' => ['/user/admin/index'],
-	],
-	[
+    ],
+    [
         'label' =>  $this->app->t('ModuleUser', 'Settings Account'),
         'url' => ['/user/settings/account'],
-	],
-	[
+    ],
+    [
         'label' =>  $this->app->t('ModuleUser', 'Settings Profile'),
         'url' => ['/user/settings/profile'],
-	],
-	[
+    ],
+    [
         'label' =>  $this->app->t('ModuleUser', 'Logout'),
         'url' => ['/user/security/logout'],
         'linkOptions' => ['data-method' => 'POST'],
-	],
+    ],
 ],
 
 /** app basic theme pathmap **/
