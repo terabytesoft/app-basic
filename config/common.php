@@ -7,29 +7,9 @@ return [
         'id' => $params['app.basic.id'],
         'name' => $params['app.basic.name'],
     ],
-    'cache' => [
-        '__class' => Yiisoft\Cache\Cache::class,
-        'handler' => [
-            '__class'   => Yiisoft\Cache\FileCache::class,
-            'keyPrefix' => 'AppBasic'
-        ],
-    ],
-    'file-rotator' => [
-        '__class' => Yiisoft\Log\FileRotator::class,
-        '__construct()' => [
-            10
-        ]
-    ],
-    'logger' => [
-        '__class' => Yiisoft\Log\Logger::class,
-        '__construct()' => [
-            'setTargets' => [
-                ['__class' => Yiisoft\Log\FileTarget::class]
-            ],
-        ],
-    ],
     'mailer' => [
         '__class'          => Yiisoft\Yii\SwiftMailer\Mailer::class,
+        'fileTransportPath' => '@public/@runtime/mail',
         'useFileTransport' => $params['mailer.useFileTransport'],
     ],
     'translator' => [
