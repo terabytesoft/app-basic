@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://github.com/terabytesoft/app-basic" target="_blank">
-        <img src="https://lh3.googleusercontent.com/DqmCbItYtxf5qhGk1WwD_RO16CF9wiQ_b3tB28qFlMD8Nv6xTpj9u-UB8LQlYz9DbkdG6-YAaY54K2bWv-j1Chg9lZEyuYDOC6t-qhcwOvDTxnF1uePU7KGvuKLVec5JkTsw7rQM=w2400" height="150px;">
+        <img src="https://lh3.googleusercontent.com/D9TFw1F6ddPuheDc_tpNptTdvTg-FNNpjLSBN14X6Sc-3JDiOxfE67rEh4OZfygonx1tKei2b2DEOHDLjF6T3xl8e-rkEEPZeGqLTWcS_v2cBRlyo0vcZLDHG5ivSDGIWCsenbol=w2400" height="50px;">
     </a>
     <h1 align="center">Web Application Basic</h1>
 </p>
@@ -10,10 +10,10 @@
         <img src="https://poser.pugx.org/terabytesoft/app-basic/v/unstable" alt="Unstable Version">
     </a>
     <a href="https://travis-ci.org/terabytesoft/app-basic" target="_blank">
-        <img src="https://img.shields.io/badge/TravisCI-build-green.svg" alt="Build Status">
+        <img src="https://travis-ci.org/terabytesoft/app-basic.svg?branch=master" alt="Build Status">
     </a>
     <a href="https://scrutinizer-ci.com/g/terabytesoft/app-basic/" target="_blank">
-        <img src="https://img.shields.io/badge/ScrutinizerCI-build-green.svg" alt="Build Status">
+        <img src="https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/build.png?b=master" alt="Build Status">
     </a>
     <a href="https://scrutinizer-ci.com/g/terabytesoft/app-basic/?branch=master" target="_blank">
      	<img src="https://scrutinizer-ci.com/g/terabytesoft/app-basic/badges/quality-score.png?b=master" alt="Code Quality">
@@ -44,14 +44,14 @@ App Web Application Basic of Yii Version 3.0 <a href="http://www.yiiframework.co
 
 ```
 config/             contains application configurations
-docs/               contains documentation app-basic
+docs/               contains documentation application basic
 src/
   Assets/           contains assets definition
-  Controllers/      contains Web controller classes
-  Forms/            contains models forms classes  
+  Controllers/      contains controller class
+  Forms/            contains models forms class  
   Messages/         contains messages translate application 
-  Views/            contains view files for the Web application
-tests/              contains various tests for the basic application
+  Views/            contains views files for web application
+tests/              contains tests codeception for the web application
 vendor/             contains dependent 3rd-party packages
 ```
 
@@ -69,8 +69,10 @@ features to your application.
 </P>
 
 ### **REQUIREMENTS:**
- 
-The minimum requirement by this project template that your Web server supports PHP 7.2.
+
+- The minimum requirement by this project template that your Web server supports:
+    - PHP 7.2 or higher.
+    - NPM [Installation](https://nodejs.org/en/download/)
 
 ### **INSTALLATION:**
 
