@@ -1,9 +1,10 @@
 <p align="center">
     <a href="https://github.com/terabytesoft/app-basic" target="_blank">
-        <img src="https://farm1.staticflickr.com/887/27875183957_69a3645a56_q.jpg" height="100px;">
+        <img src="https://lh3.googleusercontent.com/DqmCbItYtxf5qhGk1WwD_RO16CF9wiQ_b3tB28qFlMD8Nv6xTpj9u-UB8LQlYz9DbkdG6-YAaY54K2bWv-j1Chg9lZEyuYDOC6t-qhcwOvDTxnF1uePU7KGvuKLVec5JkTsw7rQM=w2400" height="150px;">
     </a>
-    <h1 align="center">Yii 3.0 Web Application Basic</h1>
+    <h1 align="center">Web Application Basic</h1>
 </p>
+
 <p align="center">
     <a href="https://packagist.org/packages/terabytesoft/app-basic" target="_blank">
         <img src="https://poser.pugx.org/terabytesoft/app-basic/v/unstable" alt="Unstable Version">
