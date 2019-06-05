@@ -24,27 +24,29 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-		"php": "^7.2",
+        "php": "^7.2",
+        "nyholm/psr7": "^1.0",
         "terabytesoft/alert": "^0.0.1@dev",
-        "yiisoft/rbac": "^3.0@dev",
-        "yiisoft/view": "^3.0@dev",
         "yiisoft/yii-bootstrap4": "^3.0@dev",
         "yiisoft/yii-captcha": "^3.0@dev",
         "yiisoft/yii-console": "^3.0@dev",
         "yiisoft/yii-jquery": "^3.0@dev",
-        "yiisoft/yii-swiftmailer": "^3.0@dev",
-        "yiisoft/yii-web": "^3.0@dev"
+        "yiisoft/yii-swiftmailer": "^3.0@dev"
     },
     "require-dev": {
 		"codeception/codeception": "^3.0",
 		"dms/phpunit-arraysubset-asserts": "^0.1.0",
 		"foxy/foxy": "^1.0",
 		"hiqdev/composer-config-plugin": "^1.0@dev",
-        "yiisoft/cache": "^3.0@dev",
+        "yiisoft/cache": "dev-master#b10f733",
         "yiisoft/di": "^3.0@dev",
 		"yiisoft/log": "^3.0@dev",
-		"yiisoft/log-target-file": "^3.0@dev",
-        "yiisoft/yii-debug": "^3.0@dev"
+        "yiisoft/log-target-file": "^3.0@dev",
+        "yiisoft/rbac": "dev-master#2f0194e",
+        "yiisoft/view": "^3.0@dev",
+        "yiisoft/yii-debug": "^3.0@dev",
+        "yiisoft/yii-core": "dev-master#ac80ebf",
+        "yiisoft/yii-web": "dev-master#4d5d840"
     },
     "autoload": {
         "psr-4": {"TerabyteSoft\\App\\Basic\\": "src"}
